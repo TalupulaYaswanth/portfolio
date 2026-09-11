@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talupula Yaswanth | Resume & Algorithmic Track Record</title>
+  <meta name="description" content="Resume of Talupula Yaswanth — Computer Science & Engineering undergraduate, competitive programming milestones, core coursework, and 1-page ATS export.">
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css?v=3">
+  <link rel="stylesheet" href="css/print.css">
+
+  <script>
+    (function() {
+      const theme = localStorage.getItem('portfolio_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+    })();
+  </script>
+</head>
+<body>
+  <div class="ambient-bg" aria-hidden="true"></div>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="container nav-container">
+      <a href="index.html" class="nav-logo" aria-label="Talupula Yaswanth Portfolio Home">
+        <div class="nav-logo-badge">TY</div>
+        <span>Talupula Yaswanth</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="competencies.html" class="nav-link">Competencies</a></li>
+          <li><a href="projects.html" class="nav-link">Projects</a></li>
+          <li><a href="resume.html" class="nav-link active">Resume & Track Record</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <button class="btn btn-primary btn-sm trigger-print-cv" title="Export clean 1-Page ATS CV to PDF">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Print / PDF CV</span>
+        </button>
+
+        <button id="mobile-menu-toggle" class="icon-btn mobile-toggle" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="page-main">
+    <!-- Header Banner -->
+    <section class="page-header-section">
+      <div class="container">
+        <span class="section-tag">Credentials & Milestones</span>
+        <h1 class="section-title">Resume & Track Record</h1>
+        <p class="section-desc" style="max-width: 680px; margin: 0 auto 1.5rem auto;">
+          Comprehensive overview of algorithmic achievements, competitive milestones, academic background, and exportable ATS resume.
+        </p>
+        <button class="btn btn-primary trigger-print-cv" style="box-shadow: var(--shadow-glow);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/>
+          </svg>
+          Download / Print 1-Page ATS Resume (PDF)
+        </button>
+      </div>
+    </section>
+
+    <!-- Achievements & Problem Solving -->
+    <section class="container" style="margin-bottom: 5rem;">
+      <div class="section-header" style="margin-bottom: 2rem; text-align: left;">
+        <span class="section-tag">Competitive Excellence</span>
+        <h2 style="font-size: 1.85rem;">Algorithmic Problem-Solving</h2>
+      </div>
+
+      <div id="achievements-container" class="achievements-grid">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+    <!-- Education Timeline -->
+    <section class="container" style="margin-bottom: 5rem;">
+      <div class="section-header" style="margin-bottom: 2rem; text-align: left;">
+        <span class="section-tag">Education</span>
+        <h2 style="font-size: 1.85rem;">Academic Degree & Core Coursework</h2>
+      </div>
+
+      <div id="education-container" class="timeline" style="margin: 0; max-width: 100%;">
+        <!-- Rendered by app.js -->
+      </div>
+    </section>
+
+    <!-- Live CV Preview Card -->
+    <section class="container">
+      <div class="section-header" style="margin-bottom: 2rem; text-align: left;">
+        <span class="section-tag">Direct Preview</span>
+        <h2 style="font-size: 1.85rem;">ATS Resume Layout Preview</h2>
+      </div>
+
+      <div class="comp-card" style="padding: 2.5rem; background: var(--bg-card);">
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.95rem;">
+          Click the button below to generate or print your recruiter-ready 1-page ATS resume formatted with standard typography, margins, and section dividers:
+        </p>
+        <button class="btn btn-primary trigger-print-cv">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+          Export 1-Page PDF CV Now
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <!-- Dedicated ATS 1-Page Print CV (Only rendered during Print / PDF Export) -->
+  <div id="print-cv-view">
+    <!-- Populated dynamically by app.js with exact ATS layout -->
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-content">
+      <p>&copy; 2026 Talupula Yaswanth &bull; Designed & Built for High-Performance Engineering</p>
+      <div style="display: flex; gap: 1rem;">
+        <a href="contact.html" class="btn btn-secondary btn-sm">Get in Touch &rarr;</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
