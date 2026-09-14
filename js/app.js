@@ -209,21 +209,31 @@ function renderFeaturedProjects() {
       <h3 class="project-name">${proj.title}</h3>
       <p class="project-hook">${proj.hook}</p>
 
-      <div class="project-summary-box">
-        <div class="project-summary-label">Problem &rarr; Engineering Solution</div>
-        <p class="project-summary-text">${proj.problemSolution.solution}</p>
-      </div>
+      <!-- Three-Bullet Architecture & Impact Breakdown -->
+      <div class="project-triplet-box">
+        <div class="triplet-item">
+          <div class="triplet-header triplet-tag-problem">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            The Problem
+          </div>
+          <p class="triplet-text">${proj.problem}</p>
+        </div>
 
-      <div style="margin-bottom: 1rem;">
-        <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.05em; display: block; margin-bottom: 0.6rem;">Key Architectural Highlights:</span>
-        <ul class="project-arch-list">
-          ${proj.highlights.map(h => `
-            <li class="project-arch-item">
-              <span class="arch-bullet">&bull;</span>
-              <span>${h}</span>
-            </li>
-          `).join('')}
-        </ul>
+        <div class="triplet-item">
+          <div class="triplet-header triplet-tag-impl">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            The Implementation
+          </div>
+          <p class="triplet-text">${proj.implementation}</p>
+        </div>
+
+        <div class="triplet-item">
+          <div class="triplet-header triplet-tag-result">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+            The Metric / Result
+          </div>
+          <p class="triplet-text">${proj.result}</p>
+        </div>
       </div>
 
       <div class="project-metrics-strip">
@@ -237,15 +247,15 @@ function renderFeaturedProjects() {
       </div>
 
       <div class="project-actions-row">
-        <a href="${proj.github}" target="_blank" rel="noopener noreferrer" class="btn btn-frosted-secondary btn-sm" title="View Source on GitHub">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-          Repository
-        </a>
-        <a href="${proj.demo}" target="_blank" rel="noopener noreferrer" class="btn btn-glow-primary btn-sm" title="Launch Demo">
+        <a href="${proj.demo}" target="_blank" rel="noopener noreferrer" class="btn btn-glow-primary btn-sm" title="Live Demo / Visual Walkthrough">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
           Live Demo
         </a>
-        <button class="icon-btn" onclick="openProjectModal('${proj.id}')" title="Technical Deep Dive" style="margin-left: auto;">
+        <a href="${proj.github}" target="_blank" rel="noopener noreferrer" class="btn btn-frosted-secondary btn-sm" title="Source Code & README on GitHub">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          Source Code
+        </a>
+        <button class="icon-btn" onclick="openProjectModal('${proj.id}')" title="Technical Deep Dive & Architecture" style="margin-left: auto;">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
         </button>
       </div>
@@ -459,7 +469,7 @@ function setupTiltEffect() {
 function setupContactForm() {
   const form = document.getElementById('portfolio-contact-form');
   if (form) {
-    form.addEventListener('submit', (e) => {
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       
       const submitBtn = form.querySelector('button[type="submit"]');
@@ -468,34 +478,63 @@ function setupContactForm() {
       submitBtn.disabled = true;
       submitBtn.innerHTML = `
         <svg class="animate-spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10"/></svg>
-        Sending...
+        Sending Message...
       `;
-      
-      setTimeout(() => {
+
+      const formData = new FormData(form);
+      const actionUrl = form.getAttribute('action');
+
+      try {
+        if (actionUrl && actionUrl.startsWith('http')) {
+          const res = await fetch(actionUrl, {
+            method: 'POST',
+            body: formData,
+            headers: { 'Accept': 'application/json' }
+          });
+          if (!res.ok) throw new Error('Network response not ok');
+        } else {
+          // Graceful simulated delay for static preview
+          await new Promise(r => setTimeout(r, 900));
+        }
+
         submitBtn.innerHTML = `
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
           Message Received!
         `;
-        showToast("Message received! Thank you for reaching out.");
+        showToast("Message sent successfully! Talupula will reply shortly.");
         form.reset();
-        
+
         setTimeout(() => {
           submitBtn.disabled = false;
           submitBtn.innerHTML = originalText;
-        }, 3500);
-      }, 900);
+        }, 4000);
+      } catch (err) {
+        // Fallback to mailto protocol
+        const name = formData.get('name') || '';
+        const email = formData.get('email') || '';
+        const msg = formData.get('message') || '';
+        const mailtoUrl = `mailto:Talupulayaswanth13@gmail.com?subject=Contact%20from%20${encodeURIComponent(name)}&body=${encodeURIComponent(msg)}%0A%0AFrom:%20${encodeURIComponent(email)}`;
+        window.location.href = mailtoUrl;
+
+        submitBtn.innerHTML = `Opening Email Client...`;
+        showToast("Opening your default email client...");
+        setTimeout(() => {
+          submitBtn.disabled = false;
+          submitBtn.innerHTML = originalText;
+        }, 3000);
+      }
     });
   }
 
-  // Copy Email to Clipboard
+  // Copy Email to Clipboard with animated visual toast
   const copyEmailBtn = document.getElementById('copy-email-btn');
   if (copyEmailBtn) {
     copyEmailBtn.addEventListener('click', () => {
       const email = profileData.personal.email;
       navigator.clipboard.writeText(email).then(() => {
-        showToast("Copied Talupulayaswanth13@gmail.com to clipboard!");
+        showToast("Copied: " + email + " to clipboard!");
       }).catch(() => {
-        showToast("Email: Talupulayaswanth13@gmail.com");
+        showToast("Email: " + email);
       });
     });
   }
@@ -580,9 +619,20 @@ function openProjectModal(projectId) {
     <h2 style="font-size: 1.85rem; margin-bottom: 0.6rem;">${proj.title}</h2>
     <p style="color: var(--accent-cyan-light); font-weight: 500; margin-bottom: 1.5rem;">${proj.hook}</p>
 
-    <div class="project-summary-box">
-      <div class="project-summary-label">Problem &rarr; Architecture Solution</div>
-      <p style="font-size: 0.95rem; color: var(--text-muted); line-height: 1.65;">${proj.problemSolution.solution}</p>
+    <!-- Three-Bullet Architecture & Impact Breakdown -->
+    <div class="project-triplet-box" style="margin-bottom: 1.75rem;">
+      <div class="triplet-item">
+        <div class="triplet-header triplet-tag-problem">The Problem</div>
+        <p class="triplet-text">${proj.problem}</p>
+      </div>
+      <div class="triplet-item">
+        <div class="triplet-header triplet-tag-impl">The Implementation</div>
+        <p class="triplet-text">${proj.implementation}</p>
+      </div>
+      <div class="triplet-item">
+        <div class="triplet-header triplet-tag-result">The Metric / Result</div>
+        <p class="triplet-text">${proj.result}</p>
+      </div>
     </div>
 
     <h4 style="font-size: 1.15rem; margin-bottom: 0.75rem; color: var(--text-bright);">Architectural Highlights & Innovations</h4>
@@ -601,13 +651,13 @@ function openProjectModal(projectId) {
     </div>
 
     <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+      <a href="${proj.demo}" target="_blank" rel="noopener noreferrer" class="btn btn-glow-primary btn-sm">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        Live Interactive Demo
+      </a>
       <a href="${proj.github}" target="_blank" rel="noopener noreferrer" class="btn btn-frosted-secondary btn-sm">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-        GitHub Repository
-      </a>
-      <a href="${proj.demo}" target="_blank" rel="noopener noreferrer" class="btn btn-glow-primary btn-sm">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
-        Live Interactive Demo
+        GitHub Source & README
       </a>
       <button class="btn btn-frosted-secondary btn-sm" onclick="closeProjectModal()" style="margin-left: auto;">Close</button>
     </div>

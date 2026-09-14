@@ -7,7 +7,7 @@ const profileData = {
   personal: {
     name: "TALUPULA YASWANTH",
     headline: "Building scalable systems at the intersection of Full-Stack Engineering & AI.",
-    subtitle: "Driven Computer Science & Engineering undergraduate engineering high-throughput distributed microservices, low-latency machine learning pipelines, and robust algorithmic architectures.",
+    subtitle: "Engineered real-time algorithmic tools & LinUCB bandits with sub-100ms latency. Solved 200+ algorithmic problems across LeetCode & GFG, delivering high-throughput microservices and AI pipelines with clean system architecture.",
     availability: "Available for Opportunities / Freelance",
     location: "Phagwara, Punjab / Andhra Pradesh, India",
     email: "Talupulayaswanth13@gmail.com",
@@ -18,8 +18,6 @@ const profileData = {
     linkedinDisplay: "linkedin.com/in/talupula-yaswanth",
     leetcode: "https://leetcode.com/u/TalupulaYaswanth",
     leetcodeDisplay: "leetcode.com/u/TalupulaYaswanth",
-    twitter: "https://x.com",
-    twitterDisplay: "x.com/TalupulaYaswanth",
     portfolio: "https://talupulayaswanth.github.io/portfolio",
     portfolioDisplay: "talupulayaswanth.github.io/portfolio",
     resumePdf: "assets/Talupula_Yaswanth_Resume.pdf"
@@ -83,26 +81,25 @@ const profileData = {
     }
   },
 
-  // Featured Projects (Bento Showcase)
+  // Featured Projects (Structured with The Problem, The Implementation, The Metric/Result)
   projects: [
     {
       id: "deadlock-visualizer",
       title: "Automated Deadlock Detection & Visualization Engine",
-      categoryBadge: "System & Visualization",
+      categoryBadge: "System & Concurrency",
       hook: "Real-time resource allocation graph simulator implementing Banker’s Algorithm to detect concurrency deadlocks.",
-      problemSolution: {
-        problem: "Concurrent OS processes frequently risk deadlock states due to circular waiting and unpredictable resource starvation.",
-        solution: "Engineered an interactive graphical simulation platform applying Banker’s safety algorithm with dynamic directed cycle detection to guarantee safe execution states."
-      },
+      problem: "Concurrent operating system processes and threads frequently risk silent deadlock states caused by circular wait conditions and unpredictable resource starvation.",
+      implementation: "Engineered an interactive graphical simulation platform applying Banker’s safety algorithm with dynamic Resource Allocation Graph (RAG) directed cycle analysis.",
+      result: "Guarantees zero-deadlock state validation through real-time state evaluation matrix, tracking concurrent threads with instant visual hazard alerts.",
       highlights: [
-        "Interactive Resource Allocation Graph (RAG) visualization tracking process claims and allocation in real-time.",
-        "Banker's Algorithm core logic guaranteeing deadlock-free allocation matrices across simulated processes.",
-        "Interactive Streamlit control dashboard displaying live thread execution states and resource matrices."
+        "Banker's Safety Verification: Dynamic matrix checks ensuring safe execution sequences across all simulated processes.",
+        "Resource Allocation Graph (RAG): Live directed graph rendering node claims, allocations, and cycle detection.",
+        "Real-Time OS Dashboard: Built in Streamlit tracking process states with instant concurrency visual feedback."
       ],
       metrics: [
-        { label: "Algorithm", val: "Banker's Safety" },
-        { label: "Visual Graph", val: "Dynamic RAG" },
-        { label: "Concurrency", val: "Real-Time Tracking" }
+        { label: "Core Logic", val: "Banker's Algorithm" },
+        { label: "Graph Engine", val: "Dynamic RAG" },
+        { label: "Evaluation", val: "Real-Time Tracking" }
       ],
       technologies: ["Python", "Streamlit", "Operating Systems", "Algorithm Design", "Data Structures"],
       github: "https://github.com/TalupulaYaswanth/Deadlock-Detection-Tool",
@@ -111,20 +108,19 @@ const profileData = {
     {
       id: "bandit-recommender",
       title: "Contextual Multi-Armed Bandit Recommendation Platform",
-      categoryBadge: "AI/ML & Recommendation",
+      categoryBadge: "AI/ML & Reinforcement Learning",
       hook: "Real-time movie recommendation engine using LinUCB reinforcement learning and FastAPI.",
-      problemSolution: {
-        problem: "Static collaborative recommenders fail when navigating dynamic user preference shifts and cold-start exploration.",
-        solution: "Built a LinUCB contextual multi-armed bandit recommendation pipeline balancing continuous exploration vs. exploitation to optimize engagement depths."
-      },
+      problem: "Traditional static collaborative filtering recommenders suffer from severe cold-start latency and fail to adapt to dynamic user preference shifts.",
+      implementation: "Engineered a LinUCB contextual multi-armed bandit recommendation pipeline balancing real-time exploration vs. exploitation via online ridge regression.",
+      result: "Achieved +28% prediction relevance uplift, optimized ingestion across 10,000+ films by 35%, and sustained sub-100ms inference served via FastAPI microservices.",
       highlights: [
-        "Implemented LinUCB contextual bandit policy with online ridge regression updating recommendation weights per user click.",
-        "Ingested and transformed 10,000+ film metadata records with 35% faster processing speed.",
-        "Sub-100ms inference pipeline served through FastAPI microservices and Streamlit interface, yielding 28% relevance uplift."
+        "LinUCB Reinforcement Policy: Contextual exploration-exploitation balancing with instant click reward propagation.",
+        "Data Ingestion Optimization: Streamlined 10,000+ film metadata pipeline with 35% faster processing speed.",
+        "Ultra Low Latency: Sub-100ms inference served via FastAPI microservices paired with interactive Streamlit client."
       ],
       metrics: [
         { label: "Relevance", val: "+28% Uplift" },
-        { label: "Ingestion", val: "+35% Speedup" },
+        { label: "Speedup", val: "+35% Ingestion" },
         { label: "Latency", val: "< 100ms Inference" }
       ],
       technologies: ["Python", "FastAPI", "Scikit-learn", "Pandas", "NumPy", "Streamlit", "LinUCB"],
@@ -134,21 +130,20 @@ const profileData = {
     {
       id: "code-explain-ai",
       title: "CodeExplain AI",
-      categoryBadge: "Developer Tools",
+      categoryBadge: "Developer Tools & NLP",
       hook: "Intelligent code parsing platform providing automated syntax explanations and time-complexity evaluations.",
-      problemSolution: {
-        problem: "Deciphering unfamiliar codebases across disparate languages creates heavy cognitive friction and slow code review cycles.",
-        solution: "Engineered a multi-language developer assistant integrating LLM and NLP pipelines with 92% parsing accuracy, reducing review effort by 40%."
-      },
+      problem: "Deciphering complex codebases across unfamiliar languages creates heavy onboarding friction and inefficient manual code review cycles.",
+      implementation: "Built a multi-language developer assistant integrating LLM and NLP pipelines to parse Abstract Syntax Trees (AST) across 5+ programming languages.",
+      result: "Delivered 92% syntax parsing accuracy and achieved a 40% reduction in manual code review effort with automated Big-O complexity reports.",
       highlights: [
-        "Multi-language code parsing engine evaluating Abstract Syntax Trees across Python, C++, Java, and JavaScript.",
-        "Automated Big-O algorithmic time and space complexity breakdown generated via fine-tuned LLM prompts.",
-        "Real-time responsive dashboard rendering syntax highlighting, tokenized summaries, and optimization tips."
+        "Abstract Syntax Tree Parsing: Evaluates syntax trees and structures across Python, C++, Java, and JavaScript.",
+        "Big-O Algorithmic Analysis: Automatically computes asymptotic time and space complexity evaluations.",
+        "Responsive Developer Portal: Real-time query rendering with syntax highlighting, token breakdown, and optimization advice."
       ],
       metrics: [
         { label: "Accuracy", val: "92% Parsing" },
-        { label: "Efficiency", val: "-40% Review Effort" },
-        { label: "Multi-Lang", val: "5+ Languages" }
+        { label: "Effort Saved", val: "-40% Review Time" },
+        { label: "Coverage", val: "5+ Languages" }
       ],
       technologies: ["Python", "Flask", "NLP", "LLM APIs", "JavaScript", "HTML5", "CSS3"],
       github: "https://github.com/TalupulaYaswanth/CodeExplain",
