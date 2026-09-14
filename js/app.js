@@ -5,6 +5,8 @@
 document.addEventListener('DOMContentLoaded', () => {
   initTheme();
   renderProfile();
+  renderInteractiveCounters();
+  renderTechStackCategories();
   renderCompetencies();
   renderProjects('all');
   renderAchievements();
@@ -84,6 +86,52 @@ function renderProfile() {
   if (statusText) statusText.textContent = p.statusBadge;
 }
 
+// 1. Interactive Metric Counter Badges
+function renderInteractiveCounters() {
+  const container = document.getElementById('counters-container');
+  if (!container || !profileData.interactiveCounters) return;
+
+  container.innerHTML = profileData.interactiveCounters.map(c => `
+    <div class="counter-card">
+      <div class="counter-card-header">
+        <span class="counter-val">${c.value}</span>
+        <div class="counter-icon">
+          ${getCategoryIcon(c.icon)}
+        </div>
+      </div>
+      <div class="counter-lbl">${c.label}</div>
+      <div class="counter-sub">${c.sub}</div>
+    </div>
+  `).join('');
+}
+
+// 2. Interactive Tech Stack Categorization Chips
+function renderTechStackCategories() {
+  const container = document.getElementById('tech-stack-container');
+  if (!container || !profileData.techStackCategories) return;
+
+  container.innerHTML = profileData.techStackCategories.map(cat => {
+    const chipsHtml = cat.skills.map(s => `
+      <span class="tech-chip">
+        <span class="tech-chip-dot"></span>
+        ${s}
+      </span>
+    `).join('');
+
+    return `
+      <div class="skill-group-card">
+        <h3 class="skill-group-title">
+          <span class="skill-group-icon">${getCategoryIcon(cat.icon)}</span>
+          ${cat.title}
+        </h3>
+        <div class="chips-wrap">
+          ${chipsHtml}
+        </div>
+      </div>
+    `;
+  }).join('');
+}
+
 function renderCompetencies() {
   const container = document.getElementById('competencies-container');
   if (!container) return;
@@ -135,8 +183,11 @@ function renderProjects(filter = 'all') {
 
     return `
       <article class="project-card" data-category="${proj.category}">
-        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
-          <span class="project-badge">${proj.badge}</span>
+        <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span class="project-badge">${proj.badge}</span>
+            <span class="live-pill"><span class="live-pulse"></span>Live Demo</span>
+          </div>
           <span style="font-size: 0.85rem; color: var(--text-dim); font-family: var(--font-mono); font-weight: 600;">${proj.date}</span>
         </div>
         <h3 class="project-title">${proj.title}</h3>
@@ -155,8 +206,9 @@ function renderProjects(filter = 'all') {
             Architecture & Details
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
           </button>
-          <a href="${proj.github}" target="_blank" rel="noopener noreferrer" class="icon-btn" title="View Source on GitHub">
-            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+          <a href="${proj.github}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm" title="View Source on GitHub">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            Repository
           </a>
         </div>
       </article>
@@ -353,7 +405,7 @@ function renderPrintView() {
     </section>
 
     <section class="cv-print-section">
-      <h2 class="cv-print-heading">CERTIFICATS</h2>
+      <h2 class="cv-print-heading">CERTIFICATIONS</h2>
       <div class="cv-print-certs-list">
         ${certsHtml}
       </div>
@@ -385,8 +437,11 @@ function openProjectModal(projectId) {
   if (!modalOverlay || !modalBody) return;
 
   modalBody.innerHTML = `
-    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem;">
-      <span class="project-badge">${proj.badge}</span>
+    <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 0.5rem; flex-wrap: wrap; gap: 0.5rem;">
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <span class="project-badge">${proj.badge}</span>
+        <span class="live-pill"><span class="live-pulse"></span>Live Demo</span>
+      </div>
       <span style="font-family: var(--font-mono); color: var(--accent-cyan); font-weight: 600;">${proj.date}</span>
     </div>
     <h2 style="font-size: 1.75rem; margin-bottom: 0.5rem;">${proj.title}</h2>
@@ -404,10 +459,14 @@ function openProjectModal(projectId) {
       ${proj.technologies.map(t => `<span class="tech-tag">${t}</span>`).join('')}
     </div>
 
-    <div style="display: flex; gap: 1rem;">
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
       <a href="${proj.github}" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-sm">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
         View Repository
+      </a>
+      <a href="${proj.demo}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+        Live Demo
       </a>
       <button class="btn btn-secondary btn-sm" onclick="closeProjectModal()">Close</button>
     </div>
@@ -469,6 +528,22 @@ function setupEventListeners() {
       l.addEventListener('click', () => navLinks.classList.remove('open'));
     });
   }
+
+  // Active hash update on scroll
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    const scrollY = window.pageYOffset;
+    sections.forEach(current => {
+      const sectionHeight = current.offsetHeight;
+      const sectionTop = current.offsetTop - 120;
+      const sectionId = current.getAttribute('id');
+      const navItem = document.querySelector(`.nav-links a[href*="#${sectionId}"]`);
+      if (navItem && scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+        document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+        navItem.classList.add('active');
+      }
+    });
+  });
 }
 
 /* ==========================================================================
@@ -477,12 +552,12 @@ function setupEventListeners() {
 function formatMetricLabel(key) {
   const map = {
     parsingAccuracy: 'Parsing Accuracy',
-    effortReduction: 'Review Effort',
+    effortReduction: 'Review Effort Saved',
     supportedLanguages: 'Languages',
-    relevanceGain: 'Relevance',
+    relevanceGain: 'Relevance Uplift',
     ingestionSpeed: 'Ingestion Speedup',
-    searchLatency: 'Latency',
-    algorithm: 'Core Logic',
+    searchLatency: 'Search Latency',
+    algorithm: 'Core Algorithm',
     graphType: 'Graph Simulation',
     monitoring: 'Concurrency Mode'
   };
@@ -491,13 +566,17 @@ function formatMetricLabel(key) {
 
 function getCategoryIcon(name) {
   const icons = {
-    cpu: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>`,
-    layers: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 12 22 7 12 12 22 7 12 12 22 7 12 12 22 7 12 12 22 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>`,
-    brain: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 9 9c0 3.5-2 6.5-5 8"/><path d="M12 21a9 9 0 0 1-9-9c0-3.5 2-6.5 5-8"/></svg>`,
-    award: `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>`,
+    cpu: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></svg>`,
+    code: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>`,
+    zap: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>`,
+    layers: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 12 22 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>`,
+    brain: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 9 9c0 3.5-2 6.5-5 8"/><path d="M12 21a9 9 0 0 1-9-9c0-3.5 2-6.5 5-8"/></svg>`,
+    globe: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>`,
+    tool: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>`,
+    users: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>`,
+    award: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>`,
     flame: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>`,
-    trophy: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H8c-.55 0-1 .45-1 1v1h10v-1c0-.55-.45-1-1-1h-1c-.55 0-1-.45-1-1v-2.34"/><path d="M18 4H6v7a6 6 0 0 0 12 0V4z"/></svg>`,
-    'book-open': `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>`
+    trophy: `<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.45 1-1 1H8c-.55 0-1 .45-1 1v1h10v-1c0-.55-.45-1-1-1h-1c-.55 0-1-.45-1-1v-2.34"/><path d="M18 4H6v7a6 6 0 0 0 12 0V4z"/></svg>`
   };
   return icons[name] || icons.cpu;
 }

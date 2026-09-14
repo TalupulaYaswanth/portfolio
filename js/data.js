@@ -17,9 +17,78 @@ const profileData = {
     linkedinDisplay: "linkedin.com/in/talupula-yaswanth",
     portfolio: "https://talupulayaswanth.github.io/portfolio",
     portfolioDisplay: "talupulayaswanth.github.io/portfolio",
-    leetcode: "https://leetcode.com",
+    leetcode: "https://leetcode.com/u/TalupulaYaswanth",
+    leetcodeDisplay: "leetcode.com/u/TalupulaYaswanth",
+    resumePdf: "assets/Talupula_Yaswanth_Resume.pdf",
     summary: "Computer Science and Engineering undergraduate at Lovely Professional University with hands-on expertise in AI/ML, LLMs, agentic AI workflows, full-stack systems, and core computer science. Demonstrated hands-on project delivery across multi-language AI code explanation tools (CodeExplain), hybrid movie recommendation systems, and automated deadlock detection simulation tools using Python, Flask, Streamlit, Scikit-learn, and PyTorch. Proven track record solving 200+ algorithmic problems across LeetCode, GeeksforGeeks, and CodeChef with strong foundations in Data Structures, Algorithms, and Operating Systems."
   },
+
+  // Interactive Counter Badges (Hero / Overview Section)
+  interactiveCounters: [
+    {
+      value: "200+",
+      label: "DSA Problems Solved",
+      sub: "LeetCode, GFG & CodeChef",
+      icon: "code"
+    },
+    {
+      value: "92%",
+      label: "Code Parsing Accuracy",
+      sub: "CodeExplain Multi-Lang Engine",
+      icon: "cpu"
+    },
+    {
+      value: "< 200ms",
+      label: "Recommendation Latency",
+      sub: "Hybrid Filtering & Streamlit",
+      icon: "zap"
+    },
+    {
+      value: "50 Days",
+      label: "LeetCode Streak Badge",
+      sub: "2026 Problem-Solving Consistency",
+      icon: "flame"
+    }
+  ],
+
+  // Interactive Tech Stack Chip Containers (Grouped by Resume Structure)
+  techStackCategories: [
+    {
+      title: "Programming Languages",
+      icon: "code",
+      skills: ["C", "C++", "Java", "Python", "SQL"]
+    },
+    {
+      title: "AI, ML & Deep Learning",
+      icon: "brain",
+      skills: ["Natural Language Processing (NLP)", "Computer Vision", "PyTorch", "Scikit-learn", "Large Language Models (LLMs)", "Agentic AI", "Retrieval-Augmented Generation (RAG)", "Prompt Engineering"]
+    },
+    {
+      title: "Databases & Storage",
+      icon: "layers",
+      skills: ["MySQL", "Relational Database Management Systems (RDBMS)"]
+    },
+    {
+      title: "Web Development",
+      icon: "globe",
+      skills: ["HTML5", "CSS3", "JavaScript", "FastAPI", "Flask", "Streamlit"]
+    },
+    {
+      title: "Developer Tools",
+      icon: "tool",
+      skills: ["Git", "GitHub", "Git Bash", "VS Code", "Docker", "Linux/Bash", "Jupyter Notebook"]
+    },
+    {
+      title: "Core CS Concepts",
+      icon: "cpu",
+      skills: ["Data Structures & Algorithms (DSA)", "Object-Oriented Programming (OOP)", "Operating Systems (OS)", "Banker's Algorithm", "Resource Allocation Graph (RAG)"]
+    },
+    {
+      title: "Soft Skills",
+      icon: "users",
+      skills: ["Analytical Problem Solving", "Adaptability", "Critical Thinking", "Team Collaboration"]
+    }
+  ],
 
   skillsMatrix: [
     { category: "Programming Languages", skills: "C, C++, Java, Python, SQL" },
@@ -125,7 +194,7 @@ const profileData = {
       badge: "Machine Learning",
       date: "Apr' 2026",
       tagline: "Hybrid recommendation pipeline combining content-based filtering and collaborative strategies.",
-      shortDesc: "Processed 10,000+ film metadata entries with 35% faster ingestion and sub-200ms user search latency.",
+      shortDesc: "Processed 10,000+ film metadata entries, improving prediction relevance by 28% and ingestion speed by 35% with sub-200ms latency.",
       fullDesc: "Implemented an end-to-end hybrid recommendation pipeline combining content-based filtering and collaborative strategies, improving prediction relevance by 28%. Processed over 10,000+ film metadata entries, optimizing data ingestion speed by 35%. Designed an interactive web interface in Streamlit reducing user search latency to under 200ms with seamless query retrieval.",
       technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Streamlit"],
       highlights: [
@@ -148,7 +217,7 @@ const profileData = {
       badge: "Operating Systems & Algorithms",
       date: "Apr' 2026",
       tagline: "Streamlit-based platform to simulate OS resource management and process concurrency.",
-      shortDesc: "Simulates OS resource management integrating Banker’s Algorithm with dynamic Resource Allocation Graph (RAG) visualizations.",
+      shortDesc: "Simulates OS resource management integrating Banker’s Algorithm with dynamic Resource Allocation Graph (RAG) visualizations for safe state tracking.",
       fullDesc: "Designed a Streamlit-based web platform to simulate OS resource management and process concurrency. Built core detection logic integrating Banker’s Algorithm with dynamic Resource Allocation Graph (RAG) visualizations for safe state tracking. Implemented a real-time dashboard tracking process execution states and resource allocation.",
       technologies: ["Python", "Streamlit", "Operating Systems", "Algorithm Design", "Data Structures"],
       highlights: [
