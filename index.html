@@ -3,17 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Talupula Yaswanth | CS & Engineering Undergraduate &bull; Portfolio & CV</title>
-  <meta name="description" content="Portfolio & ATS Web CV of Talupula Yaswanth — Computer Science and Engineering undergraduate at Lovely Professional University specializing in AI/ML, LLMs, full-stack systems, and algorithmic problem solving.">
+  <title>Talupula Yaswanth | Full-Stack Software Engineer & AI/ML Developer</title>
+  <meta name="description" content="Building scalable systems at the intersection of Full-Stack Engineering & AI. Portfolio of Talupula Yaswanth — Full-Stack Developer & AI/ML Engineer.">
   
-  <!-- Modern Typography: Google Fonts -->
+  <!-- Fonts: Plus Jakarta Sans, Inter & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Core Styles -->
-  <link rel="stylesheet" href="css/style.css?v=5">
-  <link rel="stylesheet" href="css/print.css?v=3">
+  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="css/print.css?v=4">
 
   <!-- Immediate Zero-Flicker Theme Detection -->
   <script>
@@ -24,31 +24,34 @@
   </script>
 </head>
 <body>
-  <!-- Ambient Gradient Background Mesh -->
-  <div class="ambient-bg" aria-hidden="true"></div>
+  <!-- Ambient Radial Mesh Gradient Accents -->
+  <div class="ambient-mesh" aria-hidden="true"></div>
+  <div class="noise-overlay" aria-hidden="true"></div>
 
-  <!-- Navigation Bar -->
-  <header class="navbar">
-    <div class="container nav-container">
-      <a href="#hero" class="nav-logo" aria-label="Talupula Yaswanth Portfolio Home">
-        <div class="nav-logo-badge">TY</div>
+  <!-- Floating Backdrop-Blurred Pill Navbar -->
+  <div class="floating-nav-wrapper">
+    <header class="floating-nav">
+      <!-- Monogram Logo -->
+      <a href="#about" class="nav-monogram" aria-label="Talupula Yaswanth Home">
+        <div class="monogram-badge">TY</div>
         <span>Talupula Yaswanth</span>
       </a>
 
+      <!-- Smooth-Scroll Navigation Links -->
       <nav>
-        <ul class="nav-links">
-          <li><a href="#hero" class="nav-link active">Home</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#competencies" class="nav-link">Skills & Stack</a></li>
-          <li><a href="#resume" class="nav-link">Resume & Track Record</a></li>
-          <li><a href="#contact" class="nav-link">Contact</a></li>
+        <ul class="nav-links-list">
+          <li class="nav-link-item"><a href="#about" class="active">About</a></li>
+          <li class="nav-link-item"><a href="#skills">Skills</a></li>
+          <li class="nav-link-item"><a href="#projects">Projects</a></li>
+          <li class="nav-link-item"><a href="#experience">Experience</a></li>
+          <li class="nav-link-item"><a href="#contact">Contact</a></li>
         </ul>
       </nav>
 
-      <div class="nav-actions">
-        <!-- Theme Toggle Button -->
-        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <!-- Nav Actions & High-Contrast Resume Download -->
+      <div class="nav-cta-group">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Obsidian / Clean Mode" title="Toggle Theme">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -61,237 +64,253 @@
           </svg>
         </button>
 
-        <!-- Dedicated Direct Resume PDF Download Action -->
-        <a href="assets/Talupula_Yaswanth_Resume.pdf" download="Talupula_Yaswanth_Resume.pdf" class="btn btn-primary btn-sm" title="Download ATS Resume (PDF)">
+        <a href="assets/Talupula_Yaswanth_Resume.pdf" download="Talupula_Yaswanth_Resume.pdf" class="btn btn-glow-primary btn-sm" title="Download Official ATS Resume (PDF)">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
             <polyline points="7 10 12 15 17 10"></polyline>
             <line x1="12" y1="15" x2="12" y2="3"></line>
           </svg>
-          <span>Resume &bull; CV</span>
+          <span>Resume</span>
         </a>
-
-        <!-- Mobile Menu Toggle -->
-        <button id="mobile-menu-toggle" class="icon-btn mobile-toggle" aria-label="Open Navigation Menu">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        </button>
       </div>
-    </div>
-  </header>
+    </header>
+  </div>
 
   <main>
-    <!-- Hero Section -->
-    <section id="hero" class="hero-section">
-      <div class="container hero-grid">
-        <div class="hero-content">
-          <div class="badge-status">
-            <span class="status-dot"></span>
-            <span id="status-text">Available for SWE & AI/ML Engineering Roles</span>
+    <!-- ====================================================================
+         1. Hero Section
+         ==================================================================== -->
+    <section id="about" class="hero-section">
+      <div class="container">
+        <div class="hero-grid">
+          <div class="hero-content">
+            <!-- Live Availability Badge -->
+            <div class="live-badge">
+              <span class="pulse-dot"></span>
+              <span id="availability-text">Available for Opportunities / Freelance</span>
+            </div>
+
+            <!-- High-Impact Headline -->
+            <h1 class="hero-headline">
+              Building scalable systems at the intersection of <span class="text-gradient">Full-Stack Engineering &amp; AI</span>.
+            </h1>
+
+            <!-- Subtitle -->
+            <p id="hero-subtitle" class="hero-subtitle">
+              Driven Computer Science &amp; Engineering undergraduate engineering high-throughput distributed microservices, low-latency machine learning pipelines, and robust algorithmic architectures.
+            </p>
+
+            <!-- Dual Action CTAs -->
+            <div class="hero-cta-row">
+              <a href="#projects" class="btn btn-glow-primary">
+                View Work
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+              </a>
+              <a href="#contact" class="btn btn-frosted-secondary">
+                Get in Touch
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              </a>
+            </div>
+
+            <!-- Social Links Row -->
+            <div class="social-pills-row">
+              <a href="https://github.com/TalupulaYaswanth" target="_blank" rel="noopener noreferrer" class="social-link-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+                GitHub
+              </a>
+              <a href="https://linkedin.com/in/talupula-yaswanth" target="_blank" rel="noopener noreferrer" class="social-link-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn
+              </a>
+              <a href="https://leetcode.com/u/TalupulaYaswanth" target="_blank" rel="noopener noreferrer" class="social-link-pill">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+                LeetCode (@TalupulaYaswanth)
+              </a>
+              <a href="https://x.com" target="_blank" rel="noopener noreferrer" class="social-link-pill">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l11.733 16h4.267l-11.733 -16z"/><path d="M4 20l6.768 -6.768m2.46 -2.46l6.772 -6.772"/></svg>
+                X / Twitter
+              </a>
+            </div>
           </div>
 
-          <h1 class="hero-title">
-            Hi, I'm <span id="hero-name" class="text-gradient">Talupula Yaswanth</span>
-          </h1>
-          <h2 id="hero-role" class="hero-subtitle">
-            Computer Science & Engineering Undergraduate
-          </h2>
-
-          <p id="hero-bio" class="hero-bio">
-            Computer Science and Engineering undergraduate at Lovely Professional University with hands-on expertise in AI/ML, LLMs, agentic AI workflows, full-stack systems, and core computer science. Demonstrated hands-on project delivery across multi-language AI code explanation tools (CodeExplain), hybrid movie recommendation systems, and automated deadlock detection simulation tools using Python, Flask, Streamlit, Scikit-learn, and PyTorch. Proven track record solving 200+ algorithmic problems across LeetCode, GeeksforGeeks, and CodeChef.
-          </p>
-
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">
-              Explore Featured Projects
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
-            </a>
-            <a href="#competencies" class="btn btn-secondary">
-              Technical Stack
-            </a>
-            <a href="assets/Talupula_Yaswanth_Resume.pdf" download="Talupula_Yaswanth_Resume.pdf" class="btn btn-secondary">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-              Download CV (PDF)
-            </a>
+          <!-- Interactive Code / System Terminal Bento Widget -->
+          <div class="terminal-bento-card" data-tilt>
+            <div class="terminal-chrome">
+              <div class="traffic-lights">
+                <span class="traffic-dot dot-red"></span>
+                <span class="traffic-dot dot-yellow"></span>
+                <span class="traffic-dot dot-green"></span>
+              </div>
+              <span class="terminal-title">Yaswanth_Architecture.py</span>
+              <span style="font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent-emerald);">● ACTIVE</span>
+            </div>
+            <div class="terminal-body">
+              <div><span class="code-keyword">class</span> <span class="code-fn">FullStackAIEngineer</span>:</div>
+              <div style="padding-left: 1.25rem;"><span class="code-keyword">def</span> <span class="code-fn">__init__</span>(self):</div>
+              <div style="padding-left: 2.5rem;">self.name = <span class="code-str">"Talupula Yaswanth"</span></div>
+              <div style="padding-left: 2.5rem;">self.core_stack = [<span class="code-str">"C++"</span>, <span class="code-str">"Python"</span>, <span class="code-str">"FastAPI"</span>, <span class="code-str">"PyTorch"</span>]</div>
+              <div style="padding-left: 2.5rem;">self.focus = <span class="code-str">"Distributed AI &amp; Low-Latency Systems"</span></div>
+              <br>
+              <div style="padding-left: 1.25rem;"><span class="code-keyword">def</span> <span class="code-fn">execute_pipeline</span>(self, user_intent):</div>
+              <div style="padding-left: 2.5rem;"><span class="code-comment"># Banker's safety verification &amp; LinUCB exploration</span></div>
+              <div style="padding-left: 2.5rem;">safety = self.verify_deadlock_freedom()</div>
+              <div style="padding-left: 2.5rem;">recs = self.linucb_bandit_infer(user_intent)</div>
+              <div style="padding-left: 2.5rem;"><span class="code-keyword">return</span> {<span class="code-str">"status"</span>: <span class="code-num">200</span>, <span class="code-str">"latency_ms"</span>: <span class="code-num">42</span>}</div>
+            </div>
           </div>
+        </div>
 
-          <div class="hero-socials">
-            <a href="https://github.com/TalupulaYaswanth" target="_blank" rel="noopener noreferrer" class="social-pill">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-              GitHub Profile
-            </a>
-            <a href="https://leetcode.com/u/TalupulaYaswanth" target="_blank" rel="noopener noreferrer" class="social-pill">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-              LeetCode (@TalupulaYaswanth)
-            </a>
-            <a href="https://linkedin.com/in/talupula-yaswanth" target="_blank" rel="noopener noreferrer" class="social-pill">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
-              LinkedIn
-            </a>
-            <a href="https://talupulayaswanth.github.io/portfolio" target="_blank" rel="noopener noreferrer" class="social-pill">
-              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-              Live Portfolio
-            </a>
-          </div>
-
-          <!-- Interactive Metric Counter Badges -->
-          <div id="counters-container" class="metric-counters-grid">
-            <!-- Rendered dynamically by app.js: 200+ DSA, 92% Accuracy, <200ms Latency, 50 Days Streak -->
-          </div>
+        <!-- Social Proof / Quick Metrics Row -->
+        <div id="quick-metrics-container" class="metrics-bento-grid">
+          <!-- Rendered dynamically by app.js: 50+ Days DSA, 200+ Solved, 10+ Built, <100ms Latency -->
         </div>
       </div>
     </section>
 
-    <!-- Top 3 Featured Project Cards Section -->
+    <!-- ====================================================================
+         2. Skills & Tech Stack (Bento-Grid Structure)
+         ==================================================================== -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Engineering Matrix</span>
+          <h2 class="section-title">Skills &amp; Tech Stack</h2>
+          <p class="section-desc">
+            Organized in a modern bento-grid structure spanning low-level systems programming, responsive user interfaces, scalable backend microservices, and reinforcement learning.
+          </p>
+        </div>
+
+        <div id="bento-skills-container" class="bento-skills-grid">
+          <!-- Rendered dynamically by app.js: 5 Bento Categories -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ====================================================================
+         3. Featured Projects (Bento Showcase with 3D Tilt)
+         ==================================================================== -->
     <section id="projects" class="section">
       <div class="container">
-        <div class="section-header" style="text-align: left;">
+        <div class="section-header">
           <span class="section-tag">Production Architectures</span>
           <h2 class="section-title">Featured Projects</h2>
           <p class="section-desc">
-            Direct showcase of production-grade systems spanning LLM code intelligence, hybrid film recommendation engines, and concurrent OS deadlock simulation.
+            Deep dive into end-to-end engineered platforms featuring problem-to-solution architectures, real-time performance optimizations, and live source repositories.
           </p>
         </div>
 
-        <div id="projects-container" class="projects-grid">
-          <!-- Rendered dynamically by app.js: CodeExplain, Movie Recommendation, Deadlock Detection -->
+        <div id="featured-projects-container" class="projects-bento-grid">
+          <!-- Rendered dynamically by app.js: Deadlock Detection, LinUCB Recommender, CodeExplain AI -->
         </div>
       </div>
     </section>
 
-    <!-- Interactive Tech Stack Categorization Chips Section -->
-    <section id="competencies" class="section">
+    <!-- ====================================================================
+         4. Experience & Certifications (Vertical Glowing Timeline)
+         ==================================================================== -->
+    <section id="experience" class="section">
       <div class="container">
-        <div class="section-header" style="text-align: left;">
-          <span class="section-tag">Resume Skills Matrix</span>
-          <h2 class="section-title">Technical Stack & Competencies</h2>
+        <div class="section-header">
+          <span class="section-tag">Career Milestones</span>
+          <h2 class="section-title">Experience &amp; Certifications</h2>
           <p class="section-desc">
-            Organized into visual chip groups reflecting the exact skill classifications from my official resume.
+            Track record of specialized engineering fellowships, verified artificial intelligence credentials, and academic foundations.
           </p>
         </div>
 
-        <div id="tech-stack-container" class="tech-stack-groups-grid">
-          <!-- Rendered dynamically by app.js: 7 Resume Skill Categories -->
+        <div id="experience-timeline-container" class="experience-timeline">
+          <!-- Rendered dynamically by app.js: AI Launchpad, Infosys, nasscom, Degree -->
         </div>
       </div>
     </section>
 
-    <!-- Resume, Achievements & Education Section -->
-    <section id="resume" class="section">
-      <div class="container">
-        <div class="section-header" style="text-align: left;">
-          <span class="section-tag">Milestones & Qualifications</span>
-          <h2 class="section-title">Resume & Track Record</h2>
-          <p class="section-desc">
-            Competitive programming accomplishments, intensive technical training, accredited certifications, and academic background.
-          </p>
-        </div>
-
-        <!-- Algorithmic Achievements -->
-        <div style="margin-bottom: 3.5rem;">
-          <h3 style="font-size: 1.4rem; margin-bottom: 1.25rem; color: var(--text-main);">Algorithmic Achievements</h3>
-          <div id="achievements-container" class="achievements-grid">
-            <!-- Rendered by app.js -->
-          </div>
-        </div>
-
-        <!-- Specialized Training & Certifications -->
-        <div style="margin-bottom: 3.5rem;">
-          <h3 style="font-size: 1.4rem; margin-bottom: 1.25rem; color: var(--text-main);">Training & Professional Certifications</h3>
-          <div id="training-container">
-            <!-- Rendered by app.js: AI Engineer Launchpad + Infosys/Nasscom -->
-          </div>
-        </div>
-
-        <!-- Education Timeline -->
-        <div style="margin-bottom: 3.5rem;">
-          <h3 style="font-size: 1.4rem; margin-bottom: 1.25rem; color: var(--text-main);">Education</h3>
-          <div id="education-container" class="timeline" style="margin: 0; max-width: 100%;">
-            <!-- Rendered by app.js: LPU, Narayana, Vijayanikethan -->
-          </div>
-        </div>
-
-        <!-- 1-Click ATS Resume Export & Download Card -->
-        <div class="comp-card" style="padding: 2.5rem; background: var(--bg-card); border-color: var(--border-glow);">
-          <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.5rem;">
-            <div>
-              <h3 style="font-size: 1.35rem; margin-bottom: 0.5rem;" class="text-gradient">Recruiter ATS 1-Page Resume</h3>
-              <p style="color: var(--text-muted); font-size: 0.95rem; margin: 0; max-width: 600px;">
-                Download the official ATS-compliant PDF resume or print it directly using the embedded recruiter-ready format.
-              </p>
-            </div>
-            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
-              <a href="assets/Talupula_Yaswanth_Resume.pdf" download="Talupula_Yaswanth_Resume.pdf" class="btn btn-primary">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-                Download PDF
-              </a>
-              <button class="btn btn-secondary trigger-print-cv">
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
-                Print ATS View
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Contact & Connect Section -->
+    <!-- ====================================================================
+         5. Contact & Footer
+         ==================================================================== -->
     <section id="contact" class="section">
       <div class="container">
-        <div class="section-header" style="text-align: left;">
-          <span class="section-tag">Direct Communication</span>
-          <h2 class="section-title">Get in Touch</h2>
+        <div class="section-header">
+          <span class="section-tag">Direct Collaboration</span>
+          <h2 class="section-title">Let's Build Something Impactful</h2>
           <p class="section-desc">
-            Open for Software Engineering, Full-Stack, and AI/Machine Learning roles, internships, and technical collaborations.
+            Currently available for Full-Stack, AI/ML Engineering opportunities, contract collaborations, and technical partnerships.
           </p>
         </div>
 
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; max-width: 950px;">
-          <!-- Email & Phone Card -->
-          <div class="comp-card" style="align-items: center; text-align: center;">
-            <div class="comp-icon-wrapper" style="margin-bottom: 1rem;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <div class="contact-bento-grid">
+          <!-- Contact Info & Quick Clipboard Copy Card -->
+          <div class="contact-info-card" data-tilt>
+            <h3 style="font-size: 1.45rem; margin-bottom: 0.75rem;">Direct Channels</h3>
+            <p style="margin-bottom: 2rem; font-size: 0.95rem;">
+              Reach out directly for inquiries, engineering discussions, or job opportunities.
+            </p>
+
+            <div class="contact-quick-item">
+              <div>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase;">Email</span>
+                <div style="font-weight: 600; color: var(--text-bright); font-size: 0.95rem;">Talupulayaswanth13@gmail.com</div>
+              </div>
+              <button id="copy-email-btn" class="copy-pill-btn" title="Copy Email">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+                Copy
+              </button>
             </div>
-            <h3 class="comp-title">Direct Inquiries</h3>
-            <p class="comp-desc">Fastest response for recruitment inquiries and engineering discussions.</p>
-            <div style="display: flex; flex-direction: column; gap: 0.75rem; width: 100%; margin-top: auto;">
-              <a href="mailto:Talupulayaswanth13@gmail.com" class="btn btn-primary btn-sm" style="width: 100%;">
-                Talupulayaswanth13@gmail.com
-              </a>
-              <a href="tel:+918179090074" class="btn btn-secondary btn-sm" style="width: 100%;">
-                +91 8179090074
-              </a>
+
+            <div class="contact-quick-item">
+              <div>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase;">Direct Line</span>
+                <div style="font-weight: 600; color: var(--text-bright); font-size: 0.95rem;">+91 8179090074</div>
+              </div>
+              <a href="tel:+918179090074" class="copy-pill-btn" style="text-decoration: none;">Call</a>
+            </div>
+
+            <div class="contact-quick-item">
+              <div>
+                <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-dim); text-transform: uppercase;">Location</span>
+                <div style="font-weight: 600; color: var(--text-bright); font-size: 0.95rem;">Phagwara, Punjab / AP, India</div>
+              </div>
+              <span class="copy-pill-btn" style="cursor: default;">Open to Relocation</span>
+            </div>
+
+            <div style="margin-top: 2rem;">
+              <span style="font-family: var(--font-mono); font-size: 0.78rem; color: var(--text-dim); text-transform: uppercase; display: block; margin-bottom: 0.75rem;">Verified Profiles</span>
+              <div class="social-pills-row">
+                <a href="https://github.com/TalupulaYaswanth" target="_blank" rel="noopener noreferrer" class="social-link-pill">GitHub &rarr;</a>
+                <a href="https://linkedin.com/in/talupula-yaswanth" target="_blank" rel="noopener noreferrer" class="social-link-pill">LinkedIn &rarr;</a>
+                <a href="https://leetcode.com/u/TalupulaYaswanth" target="_blank" rel="noopener noreferrer" class="social-link-pill">LeetCode &rarr;</a>
+              </div>
             </div>
           </div>
 
-          <!-- Social Profiles Card -->
-          <div class="comp-card" style="align-items: center; text-align: center;">
-            <div class="comp-icon-wrapper" style="margin-bottom: 1rem;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-            </div>
-            <h3 class="comp-title">Profiles & Repositories</h3>
-            <p class="comp-desc">Review commit history, source code repositories, and algorithmic streaks.</p>
-            <div style="display: flex; flex-direction: column; gap: 0.6rem; width: 100%; margin-top: auto;">
-              <a href="https://github.com/TalupulaYaswanth" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">GitHub Profile &rarr;</a>
-              <a href="https://linkedin.com/in/talupula-yaswanth" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">LinkedIn &rarr;</a>
-              <a href="https://leetcode.com/u/TalupulaYaswanth" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm">LeetCode Profile &rarr;</a>
-            </div>
-          </div>
-        </div>
+          <!-- Embedded Contact Form -->
+          <div class="contact-form-card" data-tilt>
+            <h3 style="font-size: 1.45rem; margin-bottom: 0.75rem;">Send a Direct Message</h3>
+            <p style="margin-bottom: 1.75rem; font-size: 0.95rem;">
+              Fill out the details below and I'll get back to you within 24 hours.
+            </p>
 
-        <!-- Location & Availability Banner -->
-        <div class="comp-card" style="margin-top: 2.5rem; text-align: center; border-color: var(--border-glow); max-width: 950px;">
-          <div class="badge-status" style="margin: 0 auto 1rem auto;">
-            <span class="status-dot"></span>
-            <span>Immediate Availability for SWE / AI & ML Roles</span>
+            <form id="portfolio-contact-form">
+              <div class="form-group">
+                <label for="form-name" class="form-label">Your Name</label>
+                <input type="text" id="form-name" name="name" class="form-input" placeholder="e.g. Alex Morgan" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-email" class="form-label">Email Address</label>
+                <input type="email" id="form-email" name="email" class="form-input" placeholder="e.g. alex@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="form-message" class="form-label">Message / Project Outline</label>
+                <textarea id="form-message" name="message" class="form-textarea" placeholder="Tell me about your team, role, or technical challenge..." required></textarea>
+              </div>
+
+              <button type="submit" class="btn btn-glow-primary" style="width: 100%;">
+                Send Message
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+              </button>
+            </form>
           </div>
-          <h4 style="font-size: 1.25rem; margin-bottom: 0.5rem;">Academic Base & Relocation</h4>
-          <p style="color: var(--text-muted); font-size: 0.95rem; max-width: 650px; margin: 0 auto;">
-            Undergraduate at <strong>Lovely Professional University (Phagwara, Punjab)</strong> / Hometown in <strong>Andhra Pradesh, India</strong>. Actively open to relocation worldwide and remote opportunities.
-          </p>
         </div>
       </div>
     </section>
@@ -305,23 +324,24 @@
     </div>
   </div>
 
-  <!-- Dedicated ATS 1-Page Print CV (Only rendered during Print / PDF Export) -->
+  <!-- Dedicated ATS 1-Page Print CV (Rendered during Print / PDF Export) -->
   <div id="print-cv-view">
     <!-- Populated dynamically by app.js with exact ATS layout -->
   </div>
 
-  <!-- Footer -->
-  <footer class="footer">
-    <div class="container footer-content">
-      <p>&copy; 2026 Talupula Yaswanth &bull; Designed & Built for High-Performance Engineering</p>
-      <div style="display: flex; gap: 1rem;">
-        <a href="assets/Talupula_Yaswanth_Resume.pdf" download="Talupula_Yaswanth_Resume.pdf" class="btn btn-secondary btn-sm">Download ATS Resume PDF</a>
+  <!-- Minimalist Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p>&copy; 2026 Talupula Yaswanth &bull; Full-Stack Software Engineer &amp; AI/ML Developer</p>
+      <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+        <span class="footer-badge-tag">Built with modern web standards</span>
+        <a href="assets/Talupula_Yaswanth_Resume.pdf" download="Talupula_Yaswanth_Resume.pdf" class="btn btn-frosted-secondary btn-sm">Download PDF Resume</a>
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
   <script src="js/data.js"></script>
-  <script src="js/app.js?v=5"></script>
+  <script src="js/app.js?v=6"></script>
 </body>
 </html>

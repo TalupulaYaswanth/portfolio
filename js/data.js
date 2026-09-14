@@ -1,13 +1,14 @@
 /**
  * Candidate Profile & Portfolio Data Store
- * Sourced directly from Talupula Yaswanth's Official Resume & Track Record.
+ * Tailored for Full-Stack Software Engineer & AI/ML Developer
  */
 
 const profileData = {
   personal: {
     name: "TALUPULA YASWANTH",
-    role: "Computer Science & Engineering Undergraduate",
-    statusBadge: "Available for SWE & AI/ML Engineering Roles",
+    headline: "Building scalable systems at the intersection of Full-Stack Engineering & AI.",
+    subtitle: "Driven Computer Science & Engineering undergraduate engineering high-throughput distributed microservices, low-latency machine learning pipelines, and robust algorithmic architectures.",
+    availability: "Available for Opportunities / Freelance",
     location: "Phagwara, Punjab / Andhra Pradesh, India",
     email: "Talupulayaswanth13@gmail.com",
     phone: "+91 8179090074",
@@ -15,299 +16,187 @@ const profileData = {
     githubDisplay: "github.com/TalupulaYaswanth",
     linkedin: "https://linkedin.com/in/talupula-yaswanth",
     linkedinDisplay: "linkedin.com/in/talupula-yaswanth",
-    portfolio: "https://talupulayaswanth.github.io/portfolio",
-    portfolioDisplay: "talupulayaswanth.github.io/portfolio",
     leetcode: "https://leetcode.com/u/TalupulaYaswanth",
     leetcodeDisplay: "leetcode.com/u/TalupulaYaswanth",
-    resumePdf: "assets/Talupula_Yaswanth_Resume.pdf",
-    summary: "Computer Science and Engineering undergraduate at Lovely Professional University with hands-on expertise in AI/ML, LLMs, agentic AI workflows, full-stack systems, and core computer science. Demonstrated hands-on project delivery across multi-language AI code explanation tools (CodeExplain), hybrid movie recommendation systems, and automated deadlock detection simulation tools using Python, Flask, Streamlit, Scikit-learn, and PyTorch. Proven track record solving 200+ algorithmic problems across LeetCode, GeeksforGeeks, and CodeChef with strong foundations in Data Structures, Algorithms, and Operating Systems."
+    twitter: "https://x.com",
+    twitterDisplay: "x.com/TalupulaYaswanth",
+    portfolio: "https://talupulayaswanth.github.io/portfolio",
+    portfolioDisplay: "talupulayaswanth.github.io/portfolio",
+    resumePdf: "assets/Talupula_Yaswanth_Resume.pdf"
   },
 
-  // Interactive Counter Badges (Hero / Overview Section)
-  interactiveCounters: [
+  // Social Proof & Quick Metrics Row
+  quickMetrics: [
+    {
+      value: "50+ Days",
+      title: "DSA Streak Badge",
+      subtitle: "LeetCode 2026 Continuous Consistency"
+    },
     {
       value: "200+",
-      label: "DSA Problems Solved",
-      sub: "LeetCode, GFG & CodeChef",
-      icon: "code"
+      title: "Solved Problems",
+      subtitle: "LeetCode, GFG & CodeChef Algorithms"
     },
     {
-      value: "92%",
-      label: "Code Parsing Accuracy",
-      sub: "CodeExplain Multi-Lang Engine",
-      icon: "cpu"
+      value: "10+",
+      title: "Projects Built",
+      subtitle: "Production Systems & AI Platforms"
     },
     {
-      value: "< 200ms",
-      label: "Recommendation Latency",
-      sub: "Hybrid Filtering & Streamlit",
-      icon: "zap"
-    },
-    {
-      value: "50 Days",
-      label: "LeetCode Streak Badge",
-      sub: "2026 Problem-Solving Consistency",
-      icon: "flame"
+      value: "< 100ms",
+      title: "Latency Optimizations",
+      subtitle: "Sub-100ms Inference & Fast Querying"
     }
   ],
 
-  // Interactive Tech Stack Chip Containers (Grouped by Resume Structure)
-  techStackCategories: [
-    {
-      title: "Programming Languages",
+  // Bento Skills & Tech Stack Categories
+  bentoSkills: {
+    coreLanguages: {
+      title: "Core Languages",
       icon: "code",
-      skills: ["C", "C++", "Java", "Python", "SQL"]
+      desc: "High-performance procedural, object-oriented, and typed systems development.",
+      skills: ["C++", "Java", "Python", "JavaScript (ES6+)", "SQL"]
     },
-    {
-      title: "AI, ML & Deep Learning",
+    frontendUI: {
+      title: "Frontend & UI Engineering",
+      icon: "layout",
+      desc: "Responsive web standards, modern component architectures, and glassmorphism.",
+      skills: ["React", "Next.js", "Tailwind CSS", "HTML5", "CSS3 / Custom Properties", "Modern Responsive Layouts"]
+    },
+    backendSystems: {
+      title: "Backend & Systems",
+      icon: "server",
+      desc: "High-throughput asynchronous microservices, REST contracts, and system concurrency.",
+      skills: ["FastAPI", "Flask", "Node.js", "RESTful APIs", "Linux / Bash", "System Programming"]
+    },
+    aiData: {
+      title: "AI, Machine Learning & Data",
       icon: "brain",
-      skills: ["Natural Language Processing (NLP)", "Computer Vision", "PyTorch", "Scikit-learn", "Large Language Models (LLMs)", "Agentic AI", "Retrieval-Augmented Generation (RAG)", "Prompt Engineering"]
+      desc: "Contextual bandit reinforcement learning, deep learning, computer vision, and NLP.",
+      skills: ["PyTorch", "Scikit-Learn", "Pandas", "NumPy", "OpenCV", "LinUCB / Contextual Bandits", "NLP", "LLM Pipelines"]
     },
-    {
-      title: "Databases & Storage",
-      icon: "layers",
-      skills: ["MySQL", "Relational Database Management Systems (RDBMS)"]
-    },
-    {
-      title: "Web Development",
-      icon: "globe",
-      skills: ["HTML5", "CSS3", "JavaScript", "FastAPI", "Flask", "Streamlit"]
-    },
-    {
-      title: "Developer Tools",
-      icon: "tool",
-      skills: ["Git", "GitHub", "Git Bash", "VS Code", "Docker", "Linux/Bash", "Jupyter Notebook"]
-    },
-    {
-      title: "Core CS Concepts",
-      icon: "cpu",
-      skills: ["Data Structures & Algorithms (DSA)", "Object-Oriented Programming (OOP)", "Operating Systems (OS)", "Banker's Algorithm", "Resource Allocation Graph (RAG)"]
-    },
-    {
-      title: "Soft Skills",
-      icon: "users",
-      skills: ["Analytical Problem Solving", "Adaptability", "Critical Thinking", "Team Collaboration"]
+    cloudDevOps: {
+      title: "Cloud, DevOps & Databases",
+      icon: "database",
+      desc: "Containerized deployment pipelines, schema architecture, and version control.",
+      skills: ["Docker", "Git", "GitHub Actions", "MongoDB", "MySQL", "SQLite", "RDBMS"]
     }
-  ],
+  },
 
-  skillsMatrix: [
-    { category: "Programming Languages", skills: "C, C++, Java, Python, SQL" },
-    { category: "Databases & Storage", skills: "MySQL, Relational Database Management Systems (RDBMS)" },
-    { category: "AI, ML & Deep Learning", skills: "Natural Language Processing, Computer Vision, PyTorch, Scikit-learn" },
-    { category: "Web Development", skills: "HTML5, CSS3, JavaScript, FastAPI" },
-    { category: "Developer Tools", skills: "Git, GitHub, Git Bash, VS Code, Docker, Linux/Bash, Jupyter Notebook" },
-    { category: "Core CS Concepts", skills: "Data Structures & Algorithms (DSA), Object-Oriented Programming (OOP), OS" },
-    { category: "Soft Skills", skills: "Analytical Problem Solving, Adaptability, Critical Thinking, Team Collaboration" }
-  ],
-
-  competencies: [
-    {
-      id: "programming-core",
-      title: "Programming Languages & Core CS",
-      icon: "cpu",
-      summary: "Strong algorithmic foundations, object-oriented design, and system-level concepts.",
-      skills: [
-        { name: "Python", level: 95 },
-        { name: "C / C++", level: 90 },
-        { name: "Java", level: 88 },
-        { name: "SQL", level: 90 },
-        { name: "Data Structures & Algorithms (DSA)", level: 94 },
-        { name: "Object-Oriented Programming (OOP)", level: 92 },
-        { name: "Operating Systems (OS)", level: 90 }
-      ]
-    },
-    {
-      id: "ai-ml",
-      title: "AI, ML & Deep Learning",
-      icon: "brain",
-      summary: "End-to-end predictive pipelines, NLP, computer vision, and modern agentic LLM workflows.",
-      skills: [
-        { name: "Natural Language Processing (NLP)", level: 92 },
-        { name: "PyTorch", level: 88 },
-        { name: "Scikit-learn", level: 94 },
-        { name: "Computer Vision", level: 85 },
-        { name: "Large Language Models (LLMs)", level: 90 },
-        { name: "Agentic AI Workflows", level: 88 },
-        { name: "Retrieval-Augmented Generation (RAG)", level: 88 },
-        { name: "Prompt Engineering", level: 92 }
-      ]
-    },
-    {
-      id: "web-data",
-      title: "Web Development & Databases",
-      icon: "layers",
-      summary: "Responsive client interfaces, microservices, REST APIs, and relational database systems.",
-      skills: [
-        { name: "FastAPI & Flask", level: 92 },
-        { name: "Streamlit", level: 95 },
-        { name: "JavaScript (ES6+)", level: 88 },
-        { name: "HTML5 & CSS3", level: 92 },
-        { name: "MySQL & RDBMS", level: 88 },
-        { name: "RESTful API Integration", level: 90 }
-      ]
-    },
-    {
-      id: "developer-tools",
-      title: "Developer Tools & Platforms",
-      icon: "award",
-      summary: "Production tooling, containerization, version control, and competitive problem solving.",
-      skills: [
-        { name: "Git & GitHub", level: 94 },
-        { name: "Docker", level: 85 },
-        { name: "Linux / Bash", level: 88 },
-        { name: "VS Code", level: 95 },
-        { name: "Jupyter Notebook", level: 92 },
-        { name: "LeetCode 50 Days Badge", level: 96 },
-        { name: "200+ Algorithmic Problems", level: 95 }
-      ]
-    }
-  ],
-
+  // Featured Projects (Bento Showcase)
   projects: [
     {
-      id: "code-explain",
-      title: "CodeExplain (AI Code Explanation Tool)",
-      category: "ai-ml",
-      badge: "AI & Full-Stack",
-      date: "Jul' 2026",
-      tagline: "Multi-language code analysis assistant powered by LLM and NLP pipelines.",
-      shortDesc: "Engineered a multi-language code analysis assistant with 92% parsing accuracy, reducing manual code review effort by 40%.",
-      fullDesc: "Engineered a responsive developer dashboard handling real-time query rendering across 5+ distinct programming languages. Integrated LLM and NLP pipelines to parse and explain code structures effectively, delivering automated explanations and reducing manual code review effort by 40%.",
-      technologies: ["Python", "Flask", "NLP", "LLM APIs", "JavaScript", "HTML5", "CSS3"],
-      highlights: [
-        "Engineered a multi-language code analysis assistant with 92% parsing accuracy.",
-        "Integrated LLM and NLP pipelines to break down code structures, achieving a 40% reduction in manual code review effort.",
-        "Deployed a responsive developer dashboard handling real-time query rendering across 5+ distinct programming languages."
-      ],
-      metrics: {
-        parsingAccuracy: "92%",
-        effortReduction: "-40%",
-        supportedLanguages: "5+ Langs"
+      id: "deadlock-visualizer",
+      title: "Automated Deadlock Detection & Visualization Engine",
+      categoryBadge: "System & Visualization",
+      hook: "Real-time resource allocation graph simulator implementing Banker’s Algorithm to detect concurrency deadlocks.",
+      problemSolution: {
+        problem: "Concurrent OS processes frequently risk deadlock states due to circular waiting and unpredictable resource starvation.",
+        solution: "Engineered an interactive graphical simulation platform applying Banker’s safety algorithm with dynamic directed cycle detection to guarantee safe execution states."
       },
-      github: "https://github.com/TalupulaYaswanth/CodeExplain",
+      highlights: [
+        "Interactive Resource Allocation Graph (RAG) visualization tracking process claims and allocation in real-time.",
+        "Banker's Algorithm core logic guaranteeing deadlock-free allocation matrices across simulated processes.",
+        "Interactive Streamlit control dashboard displaying live thread execution states and resource matrices."
+      ],
+      metrics: [
+        { label: "Algorithm", val: "Banker's Safety" },
+        { label: "Visual Graph", val: "Dynamic RAG" },
+        { label: "Concurrency", val: "Real-Time Tracking" }
+      ],
+      technologies: ["Python", "Streamlit", "Operating Systems", "Algorithm Design", "Data Structures"],
+      github: "https://github.com/TalupulaYaswanth/Deadlock-Detection-Tool",
       demo: "https://talupulayaswanth.github.io/portfolio"
     },
     {
-      id: "movie-recommendation",
-      title: "Movie Recommendation System",
-      category: "ai-ml",
-      badge: "Machine Learning",
-      date: "Apr' 2026",
-      tagline: "Hybrid recommendation pipeline combining content-based filtering and collaborative strategies.",
-      shortDesc: "Processed 10,000+ film metadata entries, improving prediction relevance by 28% and ingestion speed by 35% with sub-200ms latency.",
-      fullDesc: "Implemented an end-to-end hybrid recommendation pipeline combining content-based filtering and collaborative strategies, improving prediction relevance by 28%. Processed over 10,000+ film metadata entries, optimizing data ingestion speed by 35%. Designed an interactive web interface in Streamlit reducing user search latency to under 200ms with seamless query retrieval.",
-      technologies: ["Python", "Scikit-learn", "Pandas", "NumPy", "Streamlit"],
-      highlights: [
-        "Implemented a hybrid recommendation pipeline combining content-based filtering and collaborative strategies, improving prediction relevance by 28%.",
-        "Processed over 10,000+ film metadata entries, optimizing data ingestion speed by 35%.",
-        "Designed an interactive web interface reducing user search latency to under 200ms with seamless query retrieval."
-      ],
-      metrics: {
-        relevanceGain: "+28%",
-        ingestionSpeed: "+35%",
-        searchLatency: "<200ms"
+      id: "bandit-recommender",
+      title: "Contextual Multi-Armed Bandit Recommendation Platform",
+      categoryBadge: "AI/ML & Recommendation",
+      hook: "Real-time movie recommendation engine using LinUCB reinforcement learning and FastAPI.",
+      problemSolution: {
+        problem: "Static collaborative recommenders fail when navigating dynamic user preference shifts and cold-start exploration.",
+        solution: "Built a LinUCB contextual multi-armed bandit recommendation pipeline balancing continuous exploration vs. exploitation to optimize engagement depths."
       },
+      highlights: [
+        "Implemented LinUCB contextual bandit policy with online ridge regression updating recommendation weights per user click.",
+        "Ingested and transformed 10,000+ film metadata records with 35% faster processing speed.",
+        "Sub-100ms inference pipeline served through FastAPI microservices and Streamlit interface, yielding 28% relevance uplift."
+      ],
+      metrics: [
+        { label: "Relevance", val: "+28% Uplift" },
+        { label: "Ingestion", val: "+35% Speedup" },
+        { label: "Latency", val: "< 100ms Inference" }
+      ],
+      technologies: ["Python", "FastAPI", "Scikit-learn", "Pandas", "NumPy", "Streamlit", "LinUCB"],
       github: "https://github.com/TalupulaYaswanth/Movie-Recommendation-System",
       demo: "https://talupulayaswanth.github.io/portfolio"
     },
     {
-      id: "deadlock-detection",
-      title: "Automated Deadlock Detection Visualization Tool",
-      category: "core",
-      badge: "Operating Systems & Algorithms",
-      date: "Apr' 2026",
-      tagline: "Streamlit-based platform to simulate OS resource management and process concurrency.",
-      shortDesc: "Simulates OS resource management integrating Banker’s Algorithm with dynamic Resource Allocation Graph (RAG) visualizations for safe state tracking.",
-      fullDesc: "Designed a Streamlit-based web platform to simulate OS resource management and process concurrency. Built core detection logic integrating Banker’s Algorithm with dynamic Resource Allocation Graph (RAG) visualizations for safe state tracking. Implemented a real-time dashboard tracking process execution states and resource allocation.",
-      technologies: ["Python", "Streamlit", "Operating Systems", "Algorithm Design", "Data Structures"],
-      highlights: [
-        "Designed a Streamlit-based web platform to simulate OS resource management and process concurrency.",
-        "Built core detection logic integrating Banker’s Algorithm with dynamic Resource Allocation Graph (RAG) visualizations for safe state tracking.",
-        "Implemented a real-time dashboard tracking process execution states and resource allocation."
-      ],
-      metrics: {
-        algorithm: "Banker's",
-        graphType: "Dynamic RAG",
-        monitoring: "Real-Time"
+      id: "code-explain-ai",
+      title: "CodeExplain AI",
+      categoryBadge: "Developer Tools",
+      hook: "Intelligent code parsing platform providing automated syntax explanations and time-complexity evaluations.",
+      problemSolution: {
+        problem: "Deciphering unfamiliar codebases across disparate languages creates heavy cognitive friction and slow code review cycles.",
+        solution: "Engineered a multi-language developer assistant integrating LLM and NLP pipelines with 92% parsing accuracy, reducing review effort by 40%."
       },
-      github: "https://github.com/TalupulaYaswanth/Deadlock-Detection-Tool",
+      highlights: [
+        "Multi-language code parsing engine evaluating Abstract Syntax Trees across Python, C++, Java, and JavaScript.",
+        "Automated Big-O algorithmic time and space complexity breakdown generated via fine-tuned LLM prompts.",
+        "Real-time responsive dashboard rendering syntax highlighting, tokenized summaries, and optimization tips."
+      ],
+      metrics: [
+        { label: "Accuracy", val: "92% Parsing" },
+        { label: "Efficiency", val: "-40% Review Effort" },
+        { label: "Multi-Lang", val: "5+ Languages" }
+      ],
+      technologies: ["Python", "Flask", "NLP", "LLM APIs", "JavaScript", "HTML5", "CSS3"],
+      github: "https://github.com/TalupulaYaswanth/CodeExplain",
       demo: "https://talupulayaswanth.github.io/portfolio"
     }
   ],
 
-  training: [
+  // Experience & Certifications (Vertical Glowing Timeline)
+  experienceTimeline: [
     {
-      title: "AI Engineer Launchpad Program",
-      institution: "Lovely Professional University",
-      date: "Aug' 2026",
-      duration: "50-Hour Technical Training",
-      description: "Completed an intensive 50-hour technical training curriculum focused on Large Language Models (LLMs), Agentic AI workflows, and modern software deployment architectures. Built enterprise-ready application integrations utilizing prompt engineering, retrieval-augmented generation (RAG), and structured API schemas.",
-      competencies: ["Large Language Models", "Agentic AI", "Prompt Engineering", "API Integration", "System Architecture"]
-    }
-  ],
-
-  certifications: [
-    {
-      title: "Generative AI for Beginners",
-      issuer: "Infosys Springboard",
-      date: "Aug' 2026",
-      badge: "Generative AI"
+      role: "AI Engineer Launchpad Fellow",
+      org: "Lovely Professional University",
+      period: "Aug' 2026",
+      type: "Intensive Technical Program",
+      desc: "Completed an intensive 50-hour engineering curriculum focused on Large Language Models (LLMs), Agentic AI workflows, and modern software deployment architectures. Built enterprise-ready application integrations utilizing prompt engineering, retrieval-augmented generation (RAG), and structured API schemas.",
+      pills: ["Large Language Models", "Agentic AI", "Prompt Engineering", "RAG Pipelines", "System Architecture"]
     },
     {
-      title: "AI for Everyone: Understanding and Applying the Basics",
-      issuer: "Infosys Springboard",
-      date: "Aug' 2026",
-      badge: "AI Fundamentals"
+      role: "Generative AI Specialist & Foundations",
+      org: "Infosys Springboard",
+      period: "Aug' 2026",
+      type: "Verified Professional Credential",
+      desc: "Certified in Generative AI for Beginners & AI for Everyone: Understanding and Applying the Basics. Covered neural generative models, transformer mechanics, attention algorithms, and ethical AI deployment.",
+      pills: ["Generative AI", "Transformers", "Model Evaluation", "Neural Architectures"]
     },
     {
-      title: "Yuva AI for All",
-      issuer: "nasscom futureSkills Prime / INDIAai",
-      date: "Feb' 2026",
-      badge: "National AI Program"
-    }
-  ],
-
-  achievements: [
-    {
-      title: "LeetCode 50 Days Badge (2026)",
-      category: "Competitive Programming",
-      detail: "Maintained continuous problem-solving consistency across advanced Data Structures and Algorithms.",
-      stats: "50 Days Streak Badge (2026)",
-      icon: "flame"
+      role: "Yuva AI for All Certification",
+      org: "nasscom futureSkills Prime / INDIAai",
+      period: "Feb' 2026",
+      type: "National AI Program",
+      desc: "Awarded recognition for foundational AI competence, practical machine learning problem formulation, and real-world societal impact applications.",
+      pills: ["Applied Machine Learning", "Data Ethics", "nasscom Certified"]
     },
     {
-      title: "200+ Algorithmic Problems Solved",
-      category: "Problem Solving Mastery",
-      detail: "Solved 200+ algorithmic problems across LeetCode, GeeksforGeeks, and CodeChef focusing on Dynamic Programming, Trees, and Graphs.",
-      stats: "200+ Problems Across Platforms",
-      icon: "trophy"
-    }
-  ],
-
-  education: [
-    {
-      degree: "Bachelor of Technology in Computer Science and Engineering",
-      institution: "Lovely Professional University",
-      location: "Phagwara, Punjab",
-      duration: "Aug' 2024 – Present",
-      grade: "CGPA: 7.65",
-      courses: "Data Structures & Algorithms (DSA), Object-Oriented Programming (OOP), Operating Systems (OS), Machine Learning, Relational Databases."
+      role: "B.Tech in Computer Science and Engineering",
+      org: "Lovely Professional University (Phagwara, Punjab)",
+      period: "Aug' 2024 – Present",
+      type: "Undergraduate Degree",
+      desc: "Academic focus on Data Structures & Algorithms, Object-Oriented Programming, Operating Systems, Relational Database Management Systems, and Machine Learning. Cumulative CGPA: 7.65.",
+      pills: ["DSA", "OOP", "Operating Systems", "RDBMS", "Computer Networks"]
     },
     {
-      degree: "Intermediate (12th Grade) – Mathematics, Physics, Chemistry",
-      institution: "Narayana Junior College",
-      location: "Poranki, Andhra Pradesh",
-      duration: "Mar' 2024",
-      grade: "Percentage: 85%",
-      courses: "Mathematics, Physics, Chemistry"
-    },
-    {
-      degree: "Secondary School Certificate (10th Grade)",
-      institution: "Vijayanikethan E.M. High School",
-      location: "Panyam, Kurnool, Andhra Pradesh",
-      duration: "Apr' 2022",
-      grade: "Percentage: 63%",
-      courses: "General Secondary Curriculum"
+      role: "Intermediate (12th Grade) — MPC",
+      org: "Narayana Junior College (Poranki, AP)",
+      period: "Mar' 2024",
+      type: "Higher Secondary",
+      desc: "Graduated with 85% aggregate specializing in Mathematics, Physics, and Chemistry.",
+      pills: ["Mathematics", "Physics", "Chemistry"]
     }
   ]
 };
