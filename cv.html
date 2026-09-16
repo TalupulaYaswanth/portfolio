@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" data-cv-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Talupula Yaswanth | Curriculum Vitae &bull; Full-Stack &amp; AI Engineer</title>
+  <meta name="description" content="Official Curriculum Vitae of Talupula Yaswanth — Full-Stack Software Engineer &amp; AI/ML Developer. Real-time LinUCB bandit systems, deadlock concurrency engines, and 200+ solved algorithms.">
+  
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Google Fonts: Inter, JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css?v=9">
+  <link rel="stylesheet" href="css/cv-document.css?v=2">
+
+  <script>
+    (function() {
+      const theme = localStorage.getItem('portfolio_theme') || 'dark';
+      document.documentElement.setAttribute('data-theme', theme);
+      if (theme === 'light') {
+        document.documentElement.setAttribute('data-cv-theme', 'paper-light');
+      }
+    })();
+  </script>
+</head>
+<body class="cv-view-body">
+  <div class="cv-ambient-canvas" aria-hidden="true"></div>
+
+  <div class="cv-page-wrapper">
+    <!-- Top Sticky Control Navigation Bar -->
+    <header class="cv-control-bar">
+      <div class="cv-bar-left">
+        <a href="index.html" class="cv-back-link" title="Return to Main Portfolio">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Portfolio Home</span>
+        </a>
+
+        <div class="cv-live-indicator">
+          <span class="pulse"></span>
+          <span>ATS-Verified CV (2026)</span>
+        </div>
+      </div>
+
+      <div class="cv-bar-right">
+        <button id="cv-theme-toggle" class="btn btn-frosted-secondary btn-sm" title="Toggle Paper White / Obsidian Dark">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <span id="cv-theme-label">Paper Mode</span>
+        </button>
+
+        <button onclick="window.print()" class="btn btn-frosted-secondary btn-sm" title="Print ATS Document (Ctrl+P)">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          <span>Print CV</span>
+        </button>
+
+        <a href="assets/Talupula_Yaswanth_Resume.pdf" download="Talupula_Yaswanth_Resume.pdf" class="btn btn-glow-primary btn-sm" title="Download Official ATS Resume PDF">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          <span>Download PDF</span>
+        </a>
+      </div>
+    </header>
+
+    <!-- Main Bordered CV Document Sheet -->
+    <main class="cv-document-frame" id="cv-paper-document">
+      <!-- 1. Document Header -->
+      <header class="cv-doc-header">
+        <h1 class="cv-doc-name">TALUPULA YASWANTH</h1>
+        <div class="cv-doc-role">Full-Stack Software Engineer &amp; AI/ML Developer</div>
+
+        <!-- Verified Contact Row -->
+        <div class="cv-contact-row">
+          <div class="cv-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <span>+91 8179090074</span>
+          </div>
+
+          <div class="cv-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            <a href="mailto:Talupulayaswanth13@gmail.com">Talupulayaswanth13@gmail.com</a>
+          </div>
+
+          <div class="cv-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>Phagwara, Punjab / Andhra Pradesh, India</span>
+          </div>
+
+          <div class="cv-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+            <a href="https://linkedin.com/in/talupula-yaswanth" target="_blank" rel="noopener noreferrer">linkedin.com/in/talupula-yaswanth</a>
+          </div>
+
+          <div class="cv-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+            <a href="https://github.com/TalupulaYaswanth" target="_blank" rel="noopener noreferrer">github.com/TalupulaYaswanth</a>
+          </div>
+
+          <div class="cv-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+            <a href="https://leetcode.com/u/TalupulaYaswanth" target="_blank" rel="noopener noreferrer">leetcode.com/u/TalupulaYaswanth</a>
+          </div>
+
+          <div class="cv-contact-item">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            <a href="https://talupulayaswanth.github.io/portfolio" target="_blank" rel="noopener noreferrer">talupulayaswanth.github.io/portfolio</a>
+          </div>
+        </div>
+      </header>
+
+      <!-- 2. Professional Executive Summary -->
+      <section class="cv-section">
+        <h2 class="cv-section-heading">Professional Summary</h2>
+        <div class="cv-summary-card">
+          <strong>Turning algorithms into fast, reliable, real-world systems.</strong>
+          Engineered real-time AI tools using LinUCB bandits and safety-verified pipelines with sub-100ms latency. 200+ problems solved on LeetCode &amp; GFG, with a focus on scalable microservices and distributed system design.
+        </div>
+      </section>
+
+      <!-- 3. Technical Skills Matrix -->
+      <section class="cv-section">
+        <h2 class="cv-section-heading">Technical Competencies</h2>
+        <table class="cv-skills-table">
+          <tbody>
+            <tr>
+              <td class="cv-skill-category">Programming Languages:</td>
+              <td class="cv-skill-values">C, C++, Java, Python, SQL</td>
+            </tr>
+            <tr>
+              <td class="cv-skill-category">Databases &amp; Storage:</td>
+              <td class="cv-skill-values">MySQL, Relational Database Management Systems (RDBMS)</td>
+            </tr>
+            <tr>
+              <td class="cv-skill-category">AI, ML &amp; Deep Learning:</td>
+              <td class="cv-skill-values">Natural Language Processing (NLP), Computer Vision, PyTorch, Scikit-learn, LinUCB Reinforcement Bandits</td>
+            </tr>
+            <tr>
+              <td class="cv-skill-category">Web Development &amp; APIs:</td>
+              <td class="cv-skill-values">HTML5, CSS3, JavaScript, FastAPI, Flask, Streamlit, RESTful Services</td>
+            </tr>
+            <tr>
+              <td class="cv-skill-category">Developer Tools &amp; DevOps:</td>
+              <td class="cv-skill-values">Git, GitHub, Git Bash, VS Code, Docker, Linux/Bash, Jupyter Notebook</td>
+            </tr>
+            <tr>
+              <td class="cv-skill-category">Core Computer Science:</td>
+              <td class="cv-skill-values">Data Structures &amp; Algorithms (DSA), Object-Oriented Programming (OOP), Operating Systems, Concurrency</td>
+            </tr>
+            <tr>
+              <td class="cv-skill-category">Soft Skills &amp; Leadership:</td>
+              <td class="cv-skill-values">Analytical Problem Solving, Adaptability, Critical Thinking, Cross-Functional Team Collaboration</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+
+      <!-- 4. Key Engineered Systems & Projects -->
+      <section class="cv-section">
+        <h2 class="cv-section-heading">Engineered Systems &amp; Projects</h2>
+
+        <!-- Project 1 -->
+        <article class="cv-item-block">
+          <div class="cv-item-top">
+            <div class="cv-item-title-group">
+              <h3 class="cv-item-title">Automated Deadlock Detection &amp; Visualization Engine</h3>
+              <span class="cv-item-badge">System &amp; Concurrency</span>
+              <a href="https://github.com/TalupulaYaswanth/Deadlock-Detection-Tool" target="_blank" rel="noopener noreferrer" class="cv-item-repo-link">[GitHub Repository]</a>
+            </div>
+            <span class="cv-item-date">2026</span>
+          </div>
+          <ul class="cv-bullets-list">
+            <li><strong>Banker's Safety Verification:</strong> Dynamic matrix checks ensuring safe execution sequences across all simulated processes.</li>
+            <li><strong>Resource Allocation Graph (RAG):</strong> Live directed graph rendering node claims, allocations, and cycle detection.</li>
+            <li><strong>Real-Time OS Dashboard:</strong> Built in Streamlit tracking process states with instant concurrency visual feedback.</li>
+          </ul>
+          <div class="cv-tech-line">
+            <strong>Tech Stack:</strong> Python, Streamlit, Operating Systems, Algorithm Design, Data Structures.
+          </div>
+        </article>
+
+        <!-- Project 2 -->
+        <article class="cv-item-block">
+          <div class="cv-item-top">
+            <div class="cv-item-title-group">
+              <h3 class="cv-item-title">Contextual Multi-Armed Bandit Recommendation Platform</h3>
+              <span class="cv-item-badge">AI/ML &amp; Reinforcement Learning</span>
+              <a href="https://github.com/TalupulaYaswanth/Movie-Recommendation-System" target="_blank" rel="noopener noreferrer" class="cv-item-repo-link">[GitHub Repository]</a>
+            </div>
+            <span class="cv-item-date">2026</span>
+          </div>
+          <ul class="cv-bullets-list">
+            <li><strong>LinUCB Reinforcement Policy:</strong> Contextual exploration-exploitation balancing with instant click reward propagation.</li>
+            <li><strong>Data Ingestion Optimization:</strong> Streamlined 10,000+ film metadata pipeline with 35% faster processing speed.</li>
+            <li><strong>Ultra Low Latency:</strong> Sub-100ms inference served via FastAPI microservices paired with interactive Streamlit client.</li>
+          </ul>
+          <div class="cv-tech-line">
+            <strong>Tech Stack:</strong> Python, FastAPI, Scikit-learn, Pandas, NumPy, Streamlit, LinUCB.
+          </div>
+        </article>
+
+        <!-- Project 3 -->
+        <article class="cv-item-block">
+          <div class="cv-item-top">
+            <div class="cv-item-title-group">
+              <h3 class="cv-item-title">CodeExplain AI</h3>
+              <span class="cv-item-badge">Developer Tools &amp; NLP</span>
+              <a href="https://github.com/TalupulaYaswanth/CodeExplain" target="_blank" rel="noopener noreferrer" class="cv-item-repo-link">[GitHub Repository]</a>
+            </div>
+            <span class="cv-item-date">2026</span>
+          </div>
+          <ul class="cv-bullets-list">
+            <li><strong>Abstract Syntax Tree Parsing:</strong> Evaluates syntax trees and structures across Python, C++, Java, and JavaScript.</li>
+            <li><strong>Big-O Algorithmic Analysis:</strong> Automatically computes asymptotic time and space complexity evaluations.</li>
+            <li><strong>Responsive Developer Portal:</strong> Real-time query rendering with syntax highlighting, token breakdown, and optimization advice.</li>
+          </ul>
+          <div class="cv-tech-line">
+            <strong>Tech Stack:</strong> Python, Flask, NLP, LLM APIs, JavaScript, HTML5, CSS3.
+          </div>
+        </article>
+      </section>
+
+      <!-- 5. Algorithmic Track Record & Achievements -->
+      <section class="cv-section">
+        <h2 class="cv-section-heading">Algorithmic Problem-Solving &amp; Achievements</h2>
+        <div class="cv-two-col-grid">
+          <div class="cv-col-card">
+            <h3 class="cv-col-card-title">LeetCode 50 Days Badge (2026)</h3>
+            <div class="cv-col-card-sub">Continuous Consistency &amp; Problem Solving</div>
+            <p class="cv-col-card-desc">
+              Earned badge for solving problems daily across arrays, strings, dynamic programming, and binary search trees.
+            </p>
+          </div>
+
+          <div class="cv-col-card">
+            <h3 class="cv-col-card-title">200+ Algorithmic Problems Solved</h3>
+            <div class="cv-col-card-sub">LeetCode, GeeksforGeeks &amp; CodeChef</div>
+            <p class="cv-col-card-desc">
+              Extensive problem-solving mastery in time-space optimization, graph algorithms, and object-oriented architectures.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- 6. Education -->
+      <section class="cv-section">
+        <h2 class="cv-section-heading">Education</h2>
+        <div class="cv-item-block">
+          <div class="cv-item-top">
+            <div>
+              <h3 class="cv-item-title">Lovely Professional University</h3>
+              <div style="font-size: 0.9rem; color: var(--cv-accent-cyan); font-weight: 600; margin-top: 0.15rem;">
+                Bachelor of Technology in Computer Science and Engineering &bull; CGPA: 7.65
+              </div>
+            </div>
+            <span class="cv-item-date">Aug' 2024 &ndash; Present</span>
+          </div>
+          <p style="margin: 0.4rem 0 0 0; font-size: 0.85rem; color: var(--cv-text-secondary);">
+            Location: Phagwara, Punjab. Coursework: Data Structures &amp; Algorithms, OOP, Operating Systems, Database Management Systems, Discrete Mathematics.
+          </p>
+        </div>
+
+        <div class="cv-item-block" style="margin-bottom: 0;">
+          <div class="cv-item-top">
+            <div>
+              <h3 class="cv-item-title">Narayana Junior College</h3>
+              <div style="font-size: 0.9rem; color: var(--cv-accent-cyan); font-weight: 600; margin-top: 0.15rem;">
+                Intermediate (12th Grade) &bull; Percentage: 85%
+              </div>
+            </div>
+            <span class="cv-item-date">Mar' 2024</span>
+          </div>
+          <p style="margin: 0.4rem 0 0 0; font-size: 0.85rem; color: var(--cv-text-secondary);">
+            Location: Poranki, Andhra Pradesh. Specialization: Mathematics, Physics, Chemistry (MPC).
+          </p>
+        </div>
+      </section>
+
+      <!-- 7. Specialized Training & Certifications -->
+      <section class="cv-section">
+        <h2 class="cv-section-heading">Training &amp; Professional Certifications</h2>
+        <div class="cv-two-col-grid">
+          <div class="cv-col-card">
+            <h3 class="cv-col-card-title">AI Engineer Launchpad Program</h3>
+            <div class="cv-col-card-sub">Lovely Professional University &bull; Aug' 2025</div>
+            <p class="cv-col-card-desc">
+              Completed 50-hour intensive engineering program focusing on LLMs, Agentic AI, Prompt Engineering, and RAG architectures.
+            </p>
+          </div>
+
+          <div class="cv-col-card">
+            <h3 class="cv-col-card-title">Generative AI for Beginners &amp; AI for Everyone</h3>
+            <div class="cv-col-card-sub">Infosys Springboard &bull; Aug' 2025</div>
+            <p class="cv-col-card-desc">
+              Certified in transformer mechanics, deep neural foundations, and production generative model deployment.
+            </p>
+          </div>
+
+          <div class="cv-col-card" style="grid-column: span 2;">
+            <h3 class="cv-col-card-title">Yuva AI for All</h3>
+            <div class="cv-col-card-sub">nasscom FutureSkills Prime / INDIAai &bull; Feb' 2026</div>
+            <p class="cv-col-card-desc">
+              Certified in foundational AI literacy, ethical machine learning problem formulation, and real-world software applications.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Document Footer -->
+      <footer class="cv-document-footer">
+        <div>&copy; 2026 Talupula Yaswanth &bull; Verified ATS Curriculum Vitae</div>
+        <div>Rendered with Semantic HTML5 &amp; Modern CSS &bull; 1-Page ATS Printable</div>
+      </footer>
+    </main>
+  </div>
+
+  <script>
+    // Theme toggle between Obsidian Dark & Paper Light
+    const toggleBtn = document.getElementById('cv-theme-toggle');
+    const label = document.getElementById('cv-theme-label');
+    
+    toggleBtn.addEventListener('click', () => {
+      const current = document.documentElement.getAttribute('data-cv-theme');
+      if (current === 'paper-light') {
+        document.documentElement.setAttribute('data-cv-theme', 'dark');
+        label.textContent = 'Paper Mode';
+      } else {
+        document.documentElement.setAttribute('data-cv-theme', 'paper-light');
+        label.textContent = 'Dark Mode';
+      }
+    });
+  </script>
+</body>
+</html>

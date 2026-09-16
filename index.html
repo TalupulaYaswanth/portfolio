@@ -53,19 +53,19 @@
 
       <!-- Smooth-Scroll Navigation Links -->
       <nav>
-        <ul class="nav-links-list">
-          <li class="nav-link-item"><a href="#about" class="active">About</a></li>
-          <li class="nav-link-item"><a href="#skills">Skills</a></li>
-          <li class="nav-link-item"><a href="#projects">Projects</a></li>
-          <li class="nav-link-item"><a href="#experience">Experience</a></li>
-          <li class="nav-link-item"><a href="#contact">Contact</a></li>
+        <ul class="nav-links">
+          <li><a href="#about" class="nav-link active">About</a></li>
+          <li><a href="#competencies" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="cv.html" class="nav-link">CV &bull; Resume</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
       </nav>
 
-      <!-- Nav Actions & High-Contrast Resume Download -->
-      <div class="nav-cta-group">
-        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Obsidian / Clean Mode" title="Toggle Theme">
-          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <div class="nav-actions">
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle Dark/Light Mode" title="Toggle Theme">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="12" cy="12" r="5"></circle>
             <line x1="12" y1="1" x2="12" y2="3"></line>
             <line x1="12" y1="21" x2="12" y2="23"></line>
@@ -78,7 +78,7 @@
           </svg>
         </button>
 
-        <button id="cv-modal-trigger" class="btn btn-glow-primary btn-sm trigger-cv-modal" title="View &amp; Print CV / Resume" aria-label="Open Interactive CV">
+        <a href="cv.html" class="btn btn-glow-primary btn-sm" title="View Official Curriculum Vitae" aria-label="Open Curriculum Vitae">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
             <polyline points="14 2 14 8 20 8"></polyline>
@@ -86,8 +86,8 @@
             <line x1="16" y1="17" x2="8" y2="17"></line>
             <polyline points="10 9 9 9 8 9"></polyline>
           </svg>
-          <span>CV &bull; Resume</span>
-        </button>
+          <span>Curriculum Vitae</span>
+        </a>
       </div>
     </header>
   </div>
@@ -348,18 +348,13 @@
     </div>
   </div>
 
-  <!-- Dedicated ATS 1-Page Print CV (Rendered strictly during Print / PDF Export) -->
-  <div id="print-cv-view">
-    <!-- Populated dynamically by app.js with exact ATS layout -->
-  </div>
-
   <!-- Minimalist Footer -->
   <footer class="site-footer">
     <div class="container footer-inner">
       <p>&copy; 2026 Talupula Yaswanth &bull; Full-Stack Software Engineer &amp; AI/ML Developer</p>
       <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
         <span class="footer-badge-tag">Built with modern web standards</span>
-        <button class="btn btn-frosted-secondary btn-sm trigger-cv-modal">View Interactive CV</button>
+        <a href="cv.html" class="btn btn-frosted-secondary btn-sm">View Curriculum Vitae (CV) &rarr;</a>
         <a href="assets/Talupula_Yaswanth_Resume.pdf" download="Talupula_Yaswanth_Resume.pdf" class="btn btn-frosted-secondary btn-sm">Download PDF Resume</a>
       </div>
     </div>
@@ -367,6 +362,6 @@
 
   <!-- Scripts -->
   <script src="js/data.js"></script>
-  <script src="js/app.js?v=8"></script>
+  <script src="js/app.js?v=9"></script>
 </body>
 </html>
