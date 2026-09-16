@@ -6,8 +6,8 @@
 const profileData = {
   personal: {
     name: "TALUPULA YASWANTH",
-    headline: "Building scalable systems at the intersection of Full-Stack Engineering & AI.",
-    subtitle: "Engineered real-time algorithmic tools & LinUCB bandits with sub-100ms latency. Solved 200+ algorithmic problems across LeetCode & GFG, delivering high-throughput microservices and AI pipelines with clean system architecture.",
+    headline: "Turning algorithms into fast, reliable, real-world systems.",
+    subtitle: "Engineered real-time AI tools using LinUCB bandits and safety-verified pipelines with sub-100ms latency. 200+ problems solved on LeetCode & GFG, with a focus on scalable microservices and distributed system design.",
     availability: "Available for Opportunities / Freelance",
     location: "Phagwara, Punjab / Andhra Pradesh, India",
     email: "Talupulayaswanth13@gmail.com",
