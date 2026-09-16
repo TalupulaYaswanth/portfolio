@@ -4,6 +4,13 @@
    Activates on window.print() or Ctrl+P
    ========================================================================== */
 
+/* Screen Reset: Never show raw print-cv-view on normal browser screens */
+@media screen {
+  #print-cv-view {
+    display: none !important;
+  }
+}
+
 @media print {
   /* Reset and Hide Web-Only Elements */
   body, html {

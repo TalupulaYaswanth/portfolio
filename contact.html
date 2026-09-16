@@ -60,14 +60,15 @@
           </svg>
         </button>
 
-        <a href="assets/Talupula_Yaswanth_Resume.pdf" download="Talupula_Yaswanth_Resume.pdf" class="btn btn-primary btn-sm" title="Download ATS Resume PDF">
+        <button id="cv-modal-trigger" class="btn btn-primary btn-sm trigger-cv-modal" title="View Interactive CV Pop-up">
           <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
-            <polyline points="7 10 12 15 17 10"></polyline>
-            <line x1="12" y1="15" x2="12" y2="3"></line>
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+            <polyline points="14 2 14 8 20 8"></polyline>
+            <line x1="16" y1="13" x2="8" y2="13"></line>
+            <line x1="16" y1="17" x2="8" y2="17"></line>
           </svg>
-          <span>Resume &bull; CV</span>
-        </a>
+          <span>CV &bull; Resume</span>
+        </button>
 
         <button id="mobile-menu-toggle" class="icon-btn mobile-toggle" aria-label="Open Navigation Menu">
           <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
@@ -142,16 +143,25 @@
     </section>
   </main>
 
+  <!-- Interactive CV Showcase Pop-up Modal -->
+  <div id="cv-modal" class="modal-overlay cv-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="cv-modal-name">
+    <div class="modal-content cv-modal-content">
+      <button id="cv-modal-close-btn" class="modal-close" aria-label="Close CV modal">&times;</button>
+      <div id="cv-modal-body"></div>
+    </div>
+  </div>
+
   <footer class="footer">
     <div class="container footer-content">
       <p>&copy; 2026 Talupula Yaswanth &bull; Designed & Built for High-Performance Engineering</p>
-      <div style="display: flex; gap: 1rem;">
+      <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+        <button class="btn btn-secondary btn-sm trigger-cv-modal">View Interactive CV</button>
         <a href="index.html#hero" class="btn btn-secondary btn-sm">&larr; Back to Home</a>
       </div>
     </div>
   </footer>
 
   <script src="js/data.js"></script>
-  <script src="js/app.js?v=5"></script>
+  <script src="js/app.js?v=8"></script>
 </body>
 </html>

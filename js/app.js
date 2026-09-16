@@ -586,7 +586,7 @@ function setupInteractions() {
     });
   });
 
-  // Modal Handlers
+  // Project Modal Handlers
   const closeBtn = document.getElementById('modal-close-btn');
   if (closeBtn) closeBtn.addEventListener('click', closeProjectModal);
 
@@ -597,9 +597,223 @@ function setupInteractions() {
     });
   }
 
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') closeProjectModal();
+  // Interactive CV Pop-up Modal Handlers
+  const cvTriggers = document.querySelectorAll('.trigger-cv-modal, #cv-modal-trigger');
+  cvTriggers.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      openCVModal();
+    });
   });
+
+  const cvCloseBtn = document.getElementById('cv-modal-close-btn');
+  if (cvCloseBtn) cvCloseBtn.addEventListener('click', closeCVModal);
+
+  const cvModalOverlay = document.getElementById('cv-modal');
+  if (cvModalOverlay) {
+    cvModalOverlay.addEventListener('click', (e) => {
+      if (e.target === cvModalOverlay) closeCVModal();
+    });
+  }
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeProjectModal();
+      closeCVModal();
+    }
+  });
+}
+
+/* ==========================================================================
+   CV Pop-up Showcase Modal Controller
+   ========================================================================== */
+function openCVModal() {
+  const modalOverlay = document.getElementById('cv-modal');
+  if (!modalOverlay) return;
+
+  renderCVModal();
+  modalOverlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+
+  // Attach print trigger inside CV modal
+  const modalPrintBtns = modalOverlay.querySelectorAll('.trigger-print-cv');
+  modalPrintBtns.forEach(b => {
+    b.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.print();
+    });
+  });
+}
+
+function closeCVModal() {
+  const modalOverlay = document.getElementById('cv-modal');
+  if (modalOverlay) {
+    modalOverlay.classList.remove('active');
+    document.body.style.overflow = '';
+  }
+}
+
+function renderCVModal() {
+  const container = document.getElementById('cv-modal-body');
+  if (!container) return;
+
+  const p = profileData.personal;
+
+  container.innerHTML = `
+    <!-- CV Header -->
+    <div class="cv-popup-header">
+      <div class="cv-popup-title-block">
+        <span class="section-tag" style="margin-bottom: 0.35rem; display: inline-block;">Official Curriculum Vitae</span>
+        <h2 class="cv-popup-name text-gradient-brand">${p.name}</h2>
+        <p class="cv-popup-role">Full-Stack Software Engineer &amp; AI/ML Developer</p>
+      </div>
+
+      <div class="cv-popup-actions">
+        <a href="assets/Talupula_Yaswanth_Resume.pdf" download="Talupula_Yaswanth_Resume.pdf" class="btn btn-glow-primary btn-sm" title="Download ATS Resume PDF">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="7 10 12 15 17 10"></polyline>
+            <line x1="12" y1="15" x2="12" y2="3"></line>
+          </svg>
+          Download PDF
+        </a>
+        <button class="btn btn-frosted-secondary btn-sm trigger-print-cv" title="Print ATS 1-Page Layout">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polyline points="6 9 6 2 18 2 18 9"></polyline>
+            <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+            <rect x="6" y="14" width="12" height="8"></rect>
+          </svg>
+          Print / PDF
+        </button>
+      </div>
+    </div>
+
+    <!-- Contact & Verified Channels Grid -->
+    <div class="cv-popup-contact-grid">
+      <a href="mailto:${p.email}" class="cv-contact-pill" title="Send Email">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        <span>${p.email}</span>
+      </a>
+      <a href="tel:${p.phone.replace(/[^0-9+]/g, '')}" class="cv-contact-pill" title="Call Direct">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+        <span>${p.phone}</span>
+      </a>
+      <a href="${p.linkedin}" target="_blank" rel="noopener noreferrer" class="cv-contact-pill" title="LinkedIn Profile">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+        <span>${p.linkedinDisplay}</span>
+      </a>
+      <a href="${p.github}" target="_blank" rel="noopener noreferrer" class="cv-contact-pill" title="GitHub Repositories">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
+        <span>${p.githubDisplay}</span>
+      </a>
+      <a href="${p.leetcode}" target="_blank" rel="noopener noreferrer" class="cv-contact-pill" title="LeetCode Profile">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        <span>${p.leetcodeDisplay}</span>
+      </a>
+      <span class="cv-contact-pill">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        <span>${p.location}</span>
+      </span>
+    </div>
+
+    <!-- Executive Summary Box -->
+    <div class="cv-popup-summary">
+      <h3 class="cv-popup-section-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+        Executive Summary &amp; Outcomes
+      </h3>
+      <p style="margin: 0; font-size: 0.92rem; line-height: 1.55; color: var(--text-main);">
+        <strong style="color: #ffffff;">${p.headline}</strong> ${p.subtitle}
+      </p>
+    </div>
+
+    <!-- Technical Skills Grid -->
+    <div class="cv-popup-section">
+      <h3 class="cv-popup-section-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+        Technical Competencies
+      </h3>
+      <div class="cv-skills-grid">
+        ${Object.values(profileData.bentoSkills).map(cat => `
+          <div class="cv-skill-card">
+            <div class="cv-skill-cat-title">${cat.title}</div>
+            <div class="cv-skill-tags">
+              ${cat.skills.map(s => `<span class="cv-tag">${s}</span>`).join('')}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <!-- Key Featured Projects -->
+    <div class="cv-popup-section">
+      <h3 class="cv-popup-section-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></svg>
+        Featured Systems &amp; Projects
+      </h3>
+      <div class="cv-projects-list">
+        ${profileData.projects.map(proj => `
+          <div class="cv-project-entry">
+            <div class="cv-entry-header">
+              <div>
+                <h4 class="cv-entry-title">${proj.title}</h4>
+                <span class="cv-entry-badge">${proj.categoryBadge}</span>
+              </div>
+              <a href="${proj.github}" target="_blank" rel="noopener noreferrer" class="cv-entry-link">
+                View Source &rarr;
+              </a>
+            </div>
+            <ul class="cv-entry-bullets">
+              ${proj.highlights.map(h => `<li>${h}</li>`).join('')}
+            </ul>
+            <div class="cv-entry-tech">
+              <span class="label">Tech Stack:</span> ${proj.technologies.join(', ')}
+            </div>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+
+    <!-- Problem Solving & Achievements -->
+    <div class="cv-popup-section">
+      <h3 class="cv-popup-section-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+        Algorithmic Track Record &amp; Achievements
+      </h3>
+      <div class="cv-achieve-box">
+        <div class="cv-achieve-item">
+          <span class="cv-achieve-stat text-gradient-brand">50+ Days Streak</span>
+          <span class="cv-achieve-desc">LeetCode 50 Days Badge (2026) &bull; Continuous consistency solving complex algorithms</span>
+        </div>
+        <div class="cv-achieve-item">
+          <span class="cv-achieve-stat text-gradient-brand">200+ Solved</span>
+          <span class="cv-achieve-desc">Solved 200+ problems across LeetCode, GeeksforGeeks, and CodeChef focusing on Dynamic Programming, Graphs, and Trees</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Education & Certifications -->
+    <div class="cv-popup-section">
+      <h3 class="cv-popup-section-title">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+        Education &amp; Professional Credentials
+      </h3>
+      <div class="cv-edu-list">
+        ${profileData.experienceTimeline.map(item => `
+          <div class="cv-edu-entry">
+            <div class="cv-entry-header">
+              <div>
+                <h4 class="cv-entry-title">${item.role}</h4>
+                <div class="cv-entry-sub">${item.org}</div>
+              </div>
+              <span class="cv-entry-period">${item.period}</span>
+            </div>
+            <p class="cv-entry-desc">${item.desc}</p>
+          </div>
+        `).join('')}
+      </div>
+    </div>
+  `;
 }
 
 function openProjectModal(projectId) {
